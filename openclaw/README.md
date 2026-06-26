@@ -51,6 +51,17 @@ point any SMS-forwarding app (or Tasker/Shortcuts) at OpenClaw's endpoint.
 
 ## 🚀 Quick start (WSL / Linux / macOS)
 
+**Fastest path — one command** (installs deps, optionally builds the Ollama
+model, asks your number, then launches and shows the QR):
+
+```bash
+cd ~/agency-agents/openclaw
+./scripts/bootstrap.sh
+```
+
+Scan the QR with WhatsApp → Linked devices, text yourself `/help`, done. The
+manual steps below are the same thing broken out if you prefer control.
+
 From inside WSL (or any Linux/Mac shell):
 
 ```bash
