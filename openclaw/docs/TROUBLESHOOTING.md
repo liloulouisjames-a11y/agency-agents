@@ -67,6 +67,41 @@ Each chat keeps a resumable session. `/reset` clears it. Restarting the gateway
 keeps sessions only if the underlying Claude session store persists; if memory
 seems lost after a restart, just continue — a new session starts cleanly.
 
+### Voice notes aren't transcribed
+
+OpenClaw replies "No transcriber configured" because no speech-to-text engine is
+available. Fix either way:
+
+```bash
+# Option 1: install Whisper (auto-detected)
+sudo apt-get install -y ffmpeg
+pip install -U openai-whisper
+
+# Option 2: point at your own engine in .env
+OPENCLAW_TRANSCRIBE_CMD=whisper-cpp -f {file} -nt
+```
+
+If Whisper is slow, use a smaller model: `OPENCLAW_WHISPER_MODEL=tiny`. Confirm
+with `npm run doctor`. Images don't need any of this.
+
+### Images aren't analyzed
+
+The agent must be allowed to read the saved file. Images land in
+`<workdir>/.openclaw-media/`. If replies say it can't open the file, make sure
+`OPENCLAW_PERMISSION_MODE` is at least `acceptEdits` (the default) so the Read
+tool isn't blocked, and that the gateway has write access to the media dir.
+
+### The 24/7 service won't start / starts then dies
+
+- **Link WhatsApp interactively first.** A service can't scan a QR code. Run
+  `./scripts/openclaw.sh` once, scan, then install the service.
+- Check logs: `pm2 logs openclaw` or `journalctl --user -u openclaw -f`.
+- `claude` not found from the service usually means PATH. The systemd template
+  bakes in your PATH at install time — re-run `./scripts/service.sh systemd`
+  after fixing your PATH, or set `OPENCLAW_CLAUDE_BIN` to the full path in `.env`.
+- WSL2 + systemd: if it stops when you log out, ensure lingering is on:
+  `loginctl enable-linger "$USER"`.
+
 ### Revoke access / unlink WhatsApp
 
 On your phone: **WhatsApp → Linked devices → tap the device → Log out.** That

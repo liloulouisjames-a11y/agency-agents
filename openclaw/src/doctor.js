@@ -70,6 +70,26 @@ async function main() {
   if (fs.existsSync(config.workdir)) pass(`Working dir exists: ${config.workdir}`);
   else log.warn(`Working dir ${config.workdir} will be created on first run`);
 
+  // Media + voice transcription (optional — never fails the doctor)
+  if (config.enableMedia) {
+    pass('Media enabled (images supported)');
+    if (config.transcribeCmd) {
+      pass('Voice notes: custom OPENCLAW_TRANSCRIBE_CMD set');
+    } else {
+      try {
+        await exec('whisper', ['--help'], { timeout: 10000 });
+        pass(`Voice notes: whisper CLI found (model "${config.whisperModel}")`);
+      } catch {
+        log.warn(
+          '! Voice notes: no transcriber. Install openai-whisper (pip install -U openai-whisper) ' +
+            'or set OPENCLAW_TRANSCRIBE_CMD. Images still work.',
+        );
+      }
+    }
+  } else {
+    log.warn('! Media disabled (OPENCLAW_ENABLE_MEDIA=false)');
+  }
+
   log.plain('');
   if (problems === 0) {
     log.ok('All good — start OpenClaw with: ./scripts/openclaw.sh');

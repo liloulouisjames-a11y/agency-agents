@@ -121,6 +121,12 @@ export async function handleMessage({ chatId, text }) {
   }
 
   // ── Run the active (or one-off) specialist ───────────────────────────────
+  return buildTask({ chatId, prompt, oneOffAgent });
+}
+
+// Builds the { working, run } pair for any free-form task — shared by text
+// messages and media (images/voice) so they all route to the active specialist.
+export function buildTask({ chatId, prompt, oneOffAgent = null }) {
   const s = stateFor(chatId);
   const agent = oneOffAgent || (s.agentSlug ? resolveAgent(s.agentSlug) : null);
   const systemPrompt = agent ? buildSystemPrompt(agent) : null;
@@ -132,7 +138,7 @@ export async function handleMessage({ chatId, text }) {
     return reply || '(the agent returned nothing)';
   };
 
-  return { working, run };
+  return { working, run, agent };
 }
 
 function buildSystemPrompt(agent) {

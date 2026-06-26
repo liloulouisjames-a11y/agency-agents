@@ -164,24 +164,64 @@ Make a desktop shortcut to it for true one-click access.
 
 ---
 
-## 10. Keep it running (optional)
+## 9b. Enable voice notes (optional)
 
-To keep OpenClaw alive after closing the terminal, run it under a process
-manager inside WSL:
+Images work with no extra setup. To accept **voice notes**, OpenClaw needs a
+transcriber. The simplest free option is OpenAI Whisper:
 
 ```bash
-# with pm2
-npm install -g pm2
-pm2 start src/gateway.js --name openclaw
-pm2 save
-
-# or with tmux
-tmux new -s openclaw './scripts/openclaw.sh'   # detach with Ctrl+b, d
+# needs Python 3 + ffmpeg
+sudo apt-get install -y ffmpeg
+pip install -U openai-whisper
 ```
 
-> Note: WSL itself stops when Windows sleeps/reboots unless you enable
-> background mode. For 24/7 use, a small Linux VM or always-on machine is more
-> reliable than a laptop on WSL.
+OpenClaw detects `whisper` automatically. Pick model size in `.env`
+(`OPENCLAW_WHISPER_MODEL=tiny|base|small|medium|large`; bigger = more accurate,
+slower). Prefer a different engine (whisper.cpp, a local ASR server)? Set:
+
+```env
+OPENCLAW_TRANSCRIBE_CMD=whisper-cpp -f {file} -nt
+```
+
+`{file}` is replaced with the audio path; the command must print the transcript
+to stdout. Run `npm run doctor` to confirm transcription is wired up.
+
+---
+
+## 10. Keep it running 24/7
+
+First link WhatsApp **once interactively** so the session is saved:
+
+```bash
+./scripts/openclaw.sh     # scan the QR, confirm "OpenClaw is live", Ctrl+C
+```
+
+Then install it as a background service with the helper script:
+
+```bash
+# Option A — pm2 (simplest, works on WSL/Linux/macOS)
+./scripts/service.sh pm2
+pm2 startup               # run the command it prints, to survive reboots
+
+# Option B — systemd --user service (Linux / WSL2 with systemd)
+./scripts/service.sh systemd
+
+# Manage it
+./scripts/service.sh status
+./scripts/service.sh stop
+```
+
+Logs:
+
+```bash
+pm2 logs openclaw                       # pm2
+journalctl --user -u openclaw -f        # systemd
+```
+
+> WSL note: WSL stops when Windows sleeps/shuts down. The `systemd` option
+> enables *lingering* so OpenClaw keeps running when you log out, but for true
+> always-on use an always-on machine or a small Linux VM is more reliable than a
+> laptop on WSL.
 
 ---
 

@@ -21,12 +21,15 @@ labour** — no paid WhatsApp Business API, no extra subscription.
   anywhere.
 - **All 58 Agency specialists** — `/use frontend`, `/use growth-hacker`,
   `/use backend-architect`, … or `@agent` for a one-off.
+- **Text, images & voice notes** — send a screenshot for the agent to analyze,
+  or dictate a task as a voice note and it's transcribed and acted on.
 - **Free & private** — runs on your machine, links WhatsApp by QR (like
   WhatsApp Web). Your messages never touch a third-party bot service.
 - **Conversation memory** — each chat keeps a resumable Claude session.
 - **Locked to you** — only numbers you allow-list can command your agents.
 - **One-click open on Windows** — double-click `openclaw.bat` to launch the
   WSL gateway.
+- **Run 24/7** — one command to install it as a pm2 or systemd service.
 
 ---
 
@@ -78,6 +81,8 @@ Now text yourself `/help` and you're off. 🎉
 | `/reset` | Clear conversation memory & active agent |
 | `/status` | Show current settings |
 | `@growth-hacker give me 5 launch ideas` | Use a specialist for one message only |
+| _send an image_ | The agent reads/analyzes it (add a caption to direct it) |
+| _send a voice note_ | Transcribed, then run as a task |
 | _anything else_ | Send the task to your active agent |
 
 **Example session**
@@ -109,6 +114,39 @@ Copy `.env.example` to `.env` and edit. Key settings:
 
 See **[docs/SETUP.md](docs/SETUP.md)** for the full walkthrough and
 **[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** when something misbehaves.
+
+---
+
+## 🖼️ Images & 🎙️ voice notes
+
+- **Images** work out of the box. Send a screenshot/photo (optionally with a
+  caption like "what's wrong with this UI?") and the agent reads the file and
+  responds.
+- **Voice notes** need a transcriber. Easiest: `pip install -U openai-whisper`
+  and OpenClaw uses it automatically. Prefer another engine? Point
+  `OPENCLAW_TRANSCRIBE_CMD` at any command that takes `{file}` and prints the
+  transcript (e.g. whisper.cpp, a local ASR server). Disable all media with
+  `OPENCLAW_ENABLE_MEDIA=false`.
+
+---
+
+## ♾️ Run it 24/7
+
+Link WhatsApp once interactively (`./scripts/openclaw.sh`, scan the QR), then
+install it as a background service:
+
+```bash
+./scripts/service.sh pm2        # simplest, cross-platform
+#   or
+./scripts/service.sh systemd    # systemd --user service (Linux/WSL2)
+
+./scripts/service.sh status     # check it
+./scripts/service.sh stop       # remove it
+```
+
+`pm2` users: run `pm2 startup` once (and the command it prints) so it survives
+reboots. On WSL2, `systemd` mode enables lingering so it keeps running when
+you're logged out. See [docs/SETUP.md](docs/SETUP.md#10-keep-it-running-247).
 
 ---
 

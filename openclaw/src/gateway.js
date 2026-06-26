@@ -10,7 +10,8 @@ import path from 'node:path';
 import config from './config.js';
 import log from './logger.js';
 import { loadAgents } from './agents.js';
-import { handleMessage } from './commands.js';
+import { handleMessage, buildTask } from './commands.js';
+import { saveMedia, transcribe, isImageType, isAudioType } from './media.js';
 
 const { Client, LocalAuth } = waweb;
 
@@ -42,6 +43,12 @@ function preflight() {
   if (config.permissionMode.toLowerCase().startsWith('bypass')) {
     log.warn('Permission mode "bypass" — agents run commands WITHOUT asking. Make sure workdir is trusted.');
   }
+  if (config.enableMedia) {
+    const stt = config.transcribeCmd ? 'custom command' : 'whisper (if installed)';
+    log.info(`Media: images ✓ | voice notes via ${stt}`);
+  } else {
+    log.info('Media: disabled');
+  }
 }
 
 function isAllowed(number) {
@@ -55,6 +62,53 @@ async function sendChunked(msg, text) {
     // eslint-disable-next-line no-await-in-loop
     await msg.reply(safe.slice(i, i + MAX_CHUNK));
   }
+}
+
+// Downloads an image or voice note and returns a { working, run } task, or null
+// if it was unsupported / already answered with an error reply.
+async function processMedia(msg, number) {
+  let media;
+  try {
+    media = await msg.downloadMedia();
+  } catch (err) {
+    log.error('Media download failed:', err.message);
+  }
+  if (!media || !media.data) {
+    await msg.reply('⚠️ Could not download that attachment. Please try again.');
+    return null;
+  }
+
+  const caption = (msg.body || '').trim();
+
+  // Images: save and have the agent read the file.
+  if (isImageType(msg.type, media.mimetype)) {
+    const file = saveMedia(media, 'image');
+    log.info(`← ${number}: [image] ${caption.slice(0, 80)}`);
+    const instruction = caption || 'Look at this image and help me with it.';
+    const prompt =
+      `${instruction}\n\n` +
+      `[The user sent an image over WhatsApp. It is saved locally at: ${file}\n` +
+      `Open and analyze it with the Read tool before you respond.]`;
+    return buildTask({ chatId: msg.from, prompt });
+  }
+
+  // Voice notes / audio: transcribe to text, then treat as a normal task.
+  if (isAudioType(msg.type, media.mimetype)) {
+    const file = saveMedia(media, 'audio');
+    log.info(`← ${number}: [voice note] transcribing…`);
+    await msg.reply('🎧 Transcribing your voice note…');
+    const { text, error } = await transcribe(file);
+    if (error || !text) {
+      await msg.reply(`⚠️ ${error || 'Could not transcribe that voice note.'}`);
+      return null;
+    }
+    log.info(`← ${number}: [voice→text] ${text.slice(0, 120)}`);
+    await msg.reply(`🗣️ _"${text}"_`);
+    return buildTask({ chatId: msg.from, prompt: text });
+  }
+
+  await msg.reply('🐾 I can handle images and voice notes, but not that file type yet.');
+  return null;
 }
 
 async function main() {
@@ -101,7 +155,6 @@ async function main() {
     try {
       // Ignore status broadcasts and groups for safety.
       if (msg.from === 'status@broadcast' || msg.from.endsWith('@g.us')) return;
-      if (msg.type !== 'chat') return; // text only
 
       const number = msg.from.split('@')[0];
       if (!isAllowed(number)) {
@@ -109,12 +162,25 @@ async function main() {
         return;
       }
 
-      const text = (msg.body || '').trim();
-      if (!text) return;
-      log.info(`← ${number}: ${text.slice(0, 120)}`);
-
       const chat = await msg.getChat();
-      const result = await handleMessage({ chatId: msg.from, text });
+      let result;
+
+      if (msg.hasMedia && config.enableMedia) {
+        // Image or voice note → turn it into a task for the active specialist.
+        result = await processMedia(msg, number);
+        if (!result) return; // unsupported type, or already replied with an error
+      } else if (msg.hasMedia) {
+        await msg.reply('🐾 Media support is disabled (set OPENCLAW_ENABLE_MEDIA=true).');
+        return;
+      } else if (msg.type === 'chat') {
+        const text = (msg.body || '').trim();
+        if (!text) return;
+        log.info(`← ${number}: ${text.slice(0, 120)}`);
+        result = await handleMessage({ chatId: msg.from, text });
+      } else {
+        await msg.reply('🐾 I can handle text, images, and voice notes right now.');
+        return;
+      }
 
       // Immediate reply (command response) with no agent run.
       if (result.reply !== undefined && !result.run) {

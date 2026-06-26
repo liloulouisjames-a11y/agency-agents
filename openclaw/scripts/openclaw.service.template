@@ -1,0 +1,20 @@
+# systemd unit template for running OpenClaw 24/7 as a user service.
+# The install script (scripts/service.sh systemd) fills in the __PLACEHOLDERS__
+# and installs this for you — you normally don't edit this by hand.
+[Unit]
+Description=OpenClaw — Agency on WhatsApp gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__OPENCLAW_DIR__
+ExecStart=__NODE_BIN__ __OPENCLAW_DIR__/src/gateway.js
+Restart=on-failure
+RestartSec=5
+# Load PATH so `claude` is reachable from the service.
+Environment=PATH=__PATH__
+# Optional: pin a working dir / config via the project's .env (auto-loaded).
+
+[Install]
+WantedBy=default.target

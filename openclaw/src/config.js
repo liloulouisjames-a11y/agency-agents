@@ -66,6 +66,17 @@ export const config = {
   permissionMode: process.env.OPENCLAW_PERMISSION_MODE || 'acceptEdits',
   timeoutSeconds: num('OPENCLAW_TIMEOUT_SECONDS', 600),
   defaultAgent: (process.env.OPENCLAW_DEFAULT_AGENT || '').trim(),
+
+  // Media (images + voice notes)
+  enableMedia: bool('OPENCLAW_ENABLE_MEDIA', true),
+  mediaDir:
+    process.env.OPENCLAW_MEDIA_DIR ||
+    path.join(process.env.OPENCLAW_WORKDIR || os.homedir(), '.openclaw-media'),
+  // Shell command template to transcribe a voice note. Use {file} as the audio
+  // path placeholder; the command must print the transcript to stdout.
+  transcribeCmd: (process.env.OPENCLAW_TRANSCRIBE_CMD || '').trim(),
+  // Whisper model used by the built-in fallback when the `whisper` CLI exists.
+  whisperModel: (process.env.OPENCLAW_WHISPER_MODEL || 'base').trim(),
 };
 
 export default config;
