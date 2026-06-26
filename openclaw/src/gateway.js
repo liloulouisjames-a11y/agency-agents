@@ -30,7 +30,9 @@ function preflight() {
   log.ok(`Loaded ${agents.length} Agency specialists from ${config.agentsDir}`);
   log.info(`Backend: ${config.backend} | workdir: ${config.workdir} | perms: ${config.permissionMode}`);
 
-  if (config.backend === 'openclaw') {
+  if (config.backend === 'ollama') {
+    log.info(`Backend: Ollama (${config.openclawCmd || `${config.ollamaBin} run ${config.ollamaModel}`})`);
+  } else if (config.backend === 'openclaw') {
     log.info(`Backend: OpenClaw CLI (${config.openclawCmd || `${config.openclawBin} ${config.openclawSubcommand} …`})`);
   } else if (!['cli', 'claude'].includes(config.backend)) {
     log.warn(`Unknown backend "${config.backend}"; falling back to Claude Code.`);

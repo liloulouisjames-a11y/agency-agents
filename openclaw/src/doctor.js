@@ -36,7 +36,27 @@ async function main() {
   else fail(`Node.js ${process.version} is too old`, 'Install Node 18+ (nvm install --lts).');
 
   // Backend engine
-  if (config.backend === 'openclaw') {
+  if (config.backend === 'ollama') {
+    try {
+      await tryVersion(config.ollamaBin);
+      pass(`Backend: Ollama CLI found ("${config.ollamaBin}")`);
+      try {
+        const { stdout } = await exec(config.ollamaBin, ['list'], { timeout: 15000 });
+        if (stdout.split('\n').some((l) => l.split(/\s+/)[0]?.split(':')[0] === config.ollamaModel)) {
+          pass(`Ollama model "${config.ollamaModel}" is available`);
+        } else {
+          log.warn(`! Ollama model "${config.ollamaModel}" not pulled. Run: ${config.ollamaBin} pull ${config.ollamaModel}`);
+        }
+      } catch {
+        log.warn('! Could not list Ollama models (is the Ollama server running?).');
+      }
+    } catch {
+      fail(
+        `Ollama CLI "${config.ollamaBin}" not found`,
+        'Install Ollama (https://ollama.com), or set OPENCLAW_OLLAMA_BIN to its path.',
+      );
+    }
+  } else if (config.backend === 'openclaw') {
     if (config.openclawCmd) {
       pass(`Backend: OpenClaw via custom command template`);
     } else {

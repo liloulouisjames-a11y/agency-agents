@@ -21,5 +21,17 @@ if [ ! -f .env ]; then
   exit 1
 fi
 
+# Optional launch hook (e.g. warm up Ollama / your runtime). Set
+# OPENCLAW_LAUNCH_CMD in .env. Run in the background so a server command
+# (e.g. "ollama serve") doesn't block the gateway from starting.
+LAUNCH_CMD="$(grep -E '^OPENCLAW_LAUNCH_CMD=' .env 2>/dev/null | head -1 | cut -d= -f2-)"
+LAUNCH_CMD="${LAUNCH_CMD%\"}"; LAUNCH_CMD="${LAUNCH_CMD#\"}"
+LAUNCH_CMD="${LAUNCH_CMD%\'}"; LAUNCH_CMD="${LAUNCH_CMD#\'}"
+if [ -n "$LAUNCH_CMD" ]; then
+  bold "Launch hook: $LAUNCH_CMD"
+  nohup bash -lc "$LAUNCH_CMD" >/tmp/openclaw-launch.log 2>&1 &
+  sleep 1
+fi
+
 bold "🐾 Starting OpenClaw…  (Ctrl+C to stop)"
 exec node src/gateway.js

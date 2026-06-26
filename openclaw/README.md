@@ -170,10 +170,23 @@ remote shell access:
 
 ## 🔁 Backends: Claude Code or the OpenClaw runtime
 
-OpenClaw Gateway can drive either engine — switch with `OPENCLAW_BACKEND`:
+OpenClaw Gateway can drive several engines — switch with `OPENCLAW_BACKEND`:
 
 - **`cli` (default)** — runs your agents through the **Claude Code** CLI, using
   your existing Claude subscription. Zero extra setup beyond logging into Claude.
+- **`ollama`** — runs a **local Ollama model** as your agents = truly free, fully
+  local. If you start it with `ollama run openclaw`, just set:
+
+  ```env
+  OPENCLAW_BACKEND=ollama
+  OPENCLAW_OLLAMA_MODEL=openclaw     # your model name
+  # optional warm-up when the gateway opens (runs in background):
+  OPENCLAW_LAUNCH_CMD=ollama serve
+  ```
+
+  The gateway sends each message to `ollama run <model>` on stdin and texts back
+  the reply; the active Agency specialist's personality is prepended so the
+  local model takes on that role. `npm run doctor` checks the model is pulled.
 - **`openclaw`** — routes messages to the external **OpenClaw runtime/CLI**
   instead. Because OpenClaw's command surface varies by version, the adapter is
   configurable:
