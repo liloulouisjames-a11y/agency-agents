@@ -56,6 +56,12 @@ Confirm it works:
 claude --version
 ```
 
+> **Prefer the external OpenClaw runtime as the engine?** Set
+> `OPENCLAW_BACKEND=openclaw` in `.env` and point `OPENCLAW_CLI_CMD` at your
+> runtime's invocation (e.g. `openclaw run --agent {agent} --session {session}`).
+> See the "Backends" section in [../README.md](../README.md) for details. The
+> rest of this guide (WhatsApp linking, media, 24/7) is identical either way.
+
 ---
 
 ## 4. Get the Agency repo

@@ -62,6 +62,15 @@ export const config = {
 
   backend: (process.env.OPENCLAW_BACKEND || 'cli').toLowerCase(),
   claudeBin: process.env.OPENCLAW_CLAUDE_BIN || 'claude',
+
+  // OpenClaw-runtime backend (used when OPENCLAW_BACKEND=openclaw)
+  openclawBin: process.env.OPENCLAW_CLI_BIN || 'openclaw',
+  openclawSubcommand: process.env.OPENCLAW_CLI_SUBCOMMAND || 'run',
+  // Full shell command template; placeholders {agent} {session} {prompt}.
+  openclawCmd: (process.env.OPENCLAW_CLI_CMD || '').trim(),
+  // Prepend the chosen Agency agent's personality to the message (so it's
+  // honoured even if the agent isn't registered inside OpenClaw).
+  inlinePersona: bool('OPENCLAW_INLINE_PERSONA', true),
   workdir: process.env.OPENCLAW_WORKDIR || os.homedir(),
   permissionMode: process.env.OPENCLAW_PERMISSION_MODE || 'acceptEdits',
   timeoutSeconds: num('OPENCLAW_TIMEOUT_SECONDS', 600),

@@ -3,7 +3,7 @@
 // active) so you can say "/use frontend" once and keep chatting.
 
 import { loadAgents, resolveAgent, readAgentPrompt } from './agents.js';
-import { runAgent, resetSession } from './claude-runner.js';
+import { runAgent, resetSession } from './runner.js';
 import config from './config.js';
 
 // chatId -> { agentSlug }
@@ -134,7 +134,7 @@ export function buildTask({ chatId, prompt, oneOffAgent = null }) {
   const working = agent ? `🐾 ${agent.name} is on it…` : '🐾 On it…';
 
   const run = async () => {
-    const { text: reply } = await runAgent({ chatId, prompt, systemPrompt });
+    const { text: reply } = await runAgent({ chatId, prompt, systemPrompt, agent });
     return reply || '(the agent returned nothing)';
   };
 

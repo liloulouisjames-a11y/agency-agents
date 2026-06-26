@@ -35,15 +35,31 @@ async function main() {
   if (major >= 18) pass(`Node.js ${process.version}`);
   else fail(`Node.js ${process.version} is too old`, 'Install Node 18+ (nvm install --lts).');
 
-  // Claude Code CLI
-  try {
-    const v = await tryVersion(config.claudeBin);
-    pass(`Claude Code CLI found: ${v}`);
-  } catch {
-    fail(
-      `Claude Code CLI "${config.claudeBin}" not found or not logged in`,
-      'Install it (npm i -g @anthropic-ai/claude-code) and run `claude` once to log in.',
-    );
+  // Backend engine
+  if (config.backend === 'openclaw') {
+    if (config.openclawCmd) {
+      pass(`Backend: OpenClaw via custom command template`);
+    } else {
+      try {
+        const v = await tryVersion(config.openclawBin);
+        pass(`Backend: OpenClaw CLI found: ${v}`);
+      } catch {
+        fail(
+          `OpenClaw CLI "${config.openclawBin}" not found`,
+          'Install the OpenClaw runtime, or set OPENCLAW_CLI_BIN / OPENCLAW_CLI_CMD to match your setup.',
+        );
+      }
+    }
+  } else {
+    try {
+      const v = await tryVersion(config.claudeBin);
+      pass(`Backend: Claude Code CLI found: ${v}`);
+    } catch {
+      fail(
+        `Claude Code CLI "${config.claudeBin}" not found or not logged in`,
+        'Install it (npm i -g @anthropic-ai/claude-code) and run `claude` once to log in.',
+      );
+    }
   }
 
   // node_modules / whatsapp-web.js

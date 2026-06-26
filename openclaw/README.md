@@ -106,6 +106,7 @@ Copy `.env.example` to `.env` and edit. Key settings:
 | Variable | Meaning |
 |---|---|
 | `OPENCLAW_ALLOWED_NUMBERS` | **Required.** Comma-separated allow-list, digits only (`14155550123`). |
+| `OPENCLAW_BACKEND` | `cli` (Claude Code, default) or `openclaw` (the external OpenClaw runtime). |
 | `OPENCLAW_WORKDIR` | Folder your agents read/write in. Point it at a project to get real work done. |
 | `OPENCLAW_PERMISSION_MODE` | `acceptEdits` (default, safe-ish) · `bypass` (fully autonomous) · `default`. |
 | `OPENCLAW_DEFAULT_AGENT` | Agent slug to use when you haven't picked one. |
@@ -164,6 +165,36 @@ remote shell access:
   git-ignored. Don't commit them.
 - WhatsApp linking uses the same trust model as WhatsApp Web. Unlink the device
   from your phone to instantly revoke access.
+
+---
+
+## 🔁 Backends: Claude Code or the OpenClaw runtime
+
+OpenClaw Gateway can drive either engine — switch with `OPENCLAW_BACKEND`:
+
+- **`cli` (default)** — runs your agents through the **Claude Code** CLI, using
+  your existing Claude subscription. Zero extra setup beyond logging into Claude.
+- **`openclaw`** — routes messages to the external **OpenClaw runtime/CLI**
+  instead. Because OpenClaw's command surface varies by version, the adapter is
+  configurable:
+
+  ```env
+  OPENCLAW_BACKEND=openclaw
+  # Easiest — give the exact command your runtime uses
+  # ({agent} {session} {prompt} are substituted; the message is also on stdin):
+  OPENCLAW_CLI_CMD=openclaw run --agent {agent} --session {session}
+  # …or rely on the default:  <bin> <subcommand> [--agent X] [--session Y]
+  OPENCLAW_CLI_BIN=openclaw
+  OPENCLAW_CLI_SUBCOMMAND=run
+  ```
+
+  The active Agency specialist is passed as `{agent}`, and (by default) its
+  personality is prepended to the message so it's honoured even if that agent
+  isn't registered inside your OpenClaw runtime. Run `npm run doctor` to confirm
+  the CLI is reachable.
+
+> Either way, the WhatsApp side, commands, allow-list, media, and 24/7 service
+> all work identically — only the engine that fulfils the task changes.
 
 ---
 

@@ -30,8 +30,10 @@ function preflight() {
   log.ok(`Loaded ${agents.length} Agency specialists from ${config.agentsDir}`);
   log.info(`Backend: ${config.backend} | workdir: ${config.workdir} | perms: ${config.permissionMode}`);
 
-  if (config.backend !== 'cli') {
-    log.warn(`Backend "${config.backend}" is not supported yet; only "cli" works. Using cli.`);
+  if (config.backend === 'openclaw') {
+    log.info(`Backend: OpenClaw CLI (${config.openclawCmd || `${config.openclawBin} ${config.openclawSubcommand} …`})`);
+  } else if (!['cli', 'claude'].includes(config.backend)) {
+    log.warn(`Unknown backend "${config.backend}"; falling back to Claude Code.`);
   }
   if (!config.allowedNumbers.length && !config.allowAll) {
     log.warn('No OPENCLAW_ALLOWED_NUMBERS set. OpenClaw will refuse every message.');
