@@ -58,7 +58,44 @@ export const config = {
   agentsDir: path.resolve(rootDir, '..'),
 
   allowedNumbers: list('OPENCLAW_ALLOWED_NUMBERS'),
+  // Generic allow-list for non-phone channels (Google Chat emails, WeChat ids,
+  // webhook user ids…). Raw strings, not digit-stripped. Comma-separated.
+  allowedIds: (process.env.OPENCLAW_ALLOWED_USERS ?? '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean),
   allowAll: bool('OPENCLAW_ALLOW_ALL', false),
+
+  // Which channel adapters to start. Comma list: whatsapp, webhook, googlechat, wechat.
+  channels: (process.env.OPENCLAW_CHANNELS || 'whatsapp')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean),
+
+  // Generic webhook channel (covers Phone Link / SMS forwarders / custom bridges)
+  webhook: {
+    port: num('OPENCLAW_WEBHOOK_PORT', 8765),
+    path: process.env.OPENCLAW_WEBHOOK_PATH || '/openclaw',
+    // Shared secret required in the `x-openclaw-token` header (recommended).
+    token: (process.env.OPENCLAW_WEBHOOK_TOKEN || '').trim(),
+    // Optional: POST replies here instead of returning them in the HTTP response
+    // (for async senders). {text} and {user} placeholders are substituted.
+    replyUrl: (process.env.OPENCLAW_WEBHOOK_REPLY_URL || '').trim(),
+  },
+
+  // Google Chat app endpoint
+  googlechat: {
+    port: num('OPENCLAW_GCHAT_PORT', 8766),
+    path: process.env.OPENCLAW_GCHAT_PATH || '/googlechat',
+    // Optional shared token (verify a `?token=` query param) for a light guard.
+    token: (process.env.OPENCLAW_GCHAT_TOKEN || '').trim(),
+  },
+
+  // WeChat via Wechaty (optional dependency)
+  wechat: {
+    puppet: process.env.OPENCLAW_WECHAT_PUPPET || 'wechaty-puppet-wechat',
+    puppetToken: (process.env.OPENCLAW_WECHAT_TOKEN || '').trim(),
+  },
 
   backend: (process.env.OPENCLAW_BACKEND || 'cli').toLowerCase(),
   claudeBin: process.env.OPENCLAW_CLAUDE_BIN || 'claude',

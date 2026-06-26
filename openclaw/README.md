@@ -1,17 +1,33 @@
-# 🐾 OpenClaw — Your Agency, on WhatsApp
+# 🐾 OpenClaw — Your Agency, Everywhere
 
-> Message your phone. Your AI agents do the work. **Run anywhere, free.**
+> Message from any app. Your AI agents do the work. **Run anywhere, free.**
 
-OpenClaw is a small, self-hosted gateway that links a WhatsApp account to
-[The Agency](../README.md)'s 50+ specialist agents through **Claude Code**.
-You text a job to your own WhatsApp number; the right specialist picks it up on
-your WSL/Linux/Mac machine and texts the result back. Because it drives the
-Claude Code CLI you already use, your agents are effectively **free remote
-labour** — no paid WhatsApp Business API, no extra subscription.
+OpenClaw is a small, self-hosted gateway that links your messaging apps —
+**WhatsApp, WeChat, Google Chat, SMS/Phone Link** — to [The Agency](../README.md)'s
+specialist agents. You text a job from any connected app; the right specialist
+picks it up on your WSL/Linux/Mac machine and replies back. The engine that does
+the work is pluggable: **Claude Code**, a **local Ollama model** (truly free), or
+the **OpenClaw runtime**.
 
 ```
- 📱  You (WhatsApp)  ⇄  🐾 OpenClaw gateway (WSL)  ⇄  🤖 Claude Code + Agency agents  ⇄  💻 Your files
+ 📱 WhatsApp ┐
+ 💬 WeChat   ┤                                   ┌ 🤖 Claude Code
+ #️⃣ Google   ┤→  🐾 OpenClaw gateway (WSL)  →  ─┤  🦙 Ollama (local, free)
+ ☎️ SMS/Link ┘     core: auth · agents · media   └ 🐾 OpenClaw runtime
 ```
+
+## 📡 Channels
+
+| Channel | Status | What it needs |
+|---|---|---|
+| **WhatsApp** | ✅ works out of the box | Scan a QR (free, like WhatsApp Web) |
+| **Webhook / SMS / Phone Link** | ✅ works | An app/automation that POSTs your texts to a local endpoint |
+| **Google Chat** | ✅ adapter ready | Google Workspace + a Chat app pointing at the endpoint |
+| **WeChat** | ⚠️ adapter ready | Wechaty + a puppet (web puppet is free but Tencent often blocks it) |
+
+Enable any mix with `OPENCLAW_CHANNELS=whatsapp,webhook,googlechat,wechat`.
+Phone Link has no public API, so SMS connects through the **webhook** channel:
+point any SMS-forwarding app (or Tasker/Shortcuts) at OpenClaw's endpoint.
 
 ---
 
@@ -151,6 +167,47 @@ you're logged out. See [docs/SETUP.md](docs/SETUP.md#10-keep-it-running-247).
 
 ---
 
+## 📲 Connecting each channel
+
+### WhatsApp
+Default. `OPENCLAW_CHANNELS=whatsapp`, run the gateway, scan the QR. Done.
+
+### Webhook → SMS / Phone Link / anything
+The webhook channel is a tiny HTTP endpoint. Anything that can POST JSON drives
+your agents:
+
+```bash
+curl -X POST http://localhost:8765/openclaw \
+  -H 'x-openclaw-token: YOUR_TOKEN' \
+  -H 'content-type: application/json' \
+  -d '{"user":"14155550123","text":"/use frontend"}'
+```
+
+Reply comes back in the HTTP response (`{"reply": "..."}`), or set
+`OPENCLAW_WEBHOOK_REPLY_URL` to have OpenClaw POST replies to your sender (for
+async SMS apps). To bring in **phone texts / Phone Link**: install any
+SMS-forwarding app on your Android phone (or use Tasker/MacroDroid) that can call
+a webhook on new SMS, point it at this endpoint, and add your number to
+`OPENCLAW_ALLOWED_NUMBERS`. Expose the port to your phone over your LAN, Tailscale,
+or a tunnel (`cloudflared`/`ngrok`).
+
+### Google Chat
+`OPENCLAW_CHANNELS=...,googlechat`. In Google Cloud Console → **Google Chat API**
+→ configure your app → **Connection settings → App URL**, point it at
+`https://<your-host>/googlechat` (expose the port with a tunnel). Add your Google
+account email to `OPENCLAW_ALLOWED_USERS`. (Requires Google Workspace; Chat apps
+aren't available on personal Gmail.)
+
+### WeChat
+`OPENCLAW_CHANNELS=...,wechat` and install Wechaty:
+`npm i wechaty wechaty-puppet-wechat`. Run the gateway and scan the WeChat QR.
+Heads-up: the free web puppet is frequently blocked by Tencent — if login fails,
+use a [PadLocal](https://wechaty.js.org/docs/puppet-services/padlocal) or other
+puppet token via `OPENCLAW_WECHAT_PUPPET` / `OPENCLAW_WECHAT_TOKEN`. Your WeChat
+id is logged on each message; add it to `OPENCLAW_ALLOWED_USERS`.
+
+---
+
 ## 🔒 Security — read this
 
 OpenClaw lets a phone message run AI agents **on your computer**. Treat it like
@@ -213,16 +270,19 @@ OpenClaw Gateway can drive several engines — switch with `OPENCLAW_BACKEND`:
 
 ## 🧩 How it works
 
-1. `whatsapp-web.js` links a WhatsApp account over QR and streams your messages.
-2. `commands.js` parses each message (slash-command or task) and picks the
-   active specialist.
+1. **Channel adapters** (`src/channels/*`) connect each app and normalize every
+   inbound message to a common shape (`{channel, userId, text, media, reply()}`).
+2. **`core.js`** applies the allow-list, then hands off to `commands.js`, which
+   parses slash-commands or tasks and picks the active specialist.
 3. `agents.js` loads the chosen agent's Markdown personality from the Agency.
-4. `claude-runner.js` runs `claude -p` headlessly with that personality as the
-   system prompt, resuming a per-chat session for memory.
-5. The reply is chunked and texted back to you.
+4. **`runner.js`** dispatches to the selected backend — `claude-runner.js`
+   (Claude Code) or `openclaw-runner.js` (Ollama / OpenClaw CLI) — resuming a
+   per-(channel+user) session for memory.
+5. The reply is sent back through the same channel it came from.
 
-No application servers, no inbound ports — it's an outbound client, so it works
-from behind home NAT/WSL with zero networking setup.
+WhatsApp/WeChat are outbound clients (work from behind home NAT/WSL with zero
+port-forwarding). The webhook and Google Chat channels are small HTTP servers —
+expose them over your LAN, Tailscale, or a tunnel when you need remote access.
 
 ---
 

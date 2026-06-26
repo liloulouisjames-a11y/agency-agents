@@ -96,10 +96,34 @@ async function main() {
   if (fs.existsSync(path.join(config.rootDir, '.env'))) pass('.env present');
   else fail('.env missing', 'Run: cp .env.example .env  (then add your number).');
 
-  if (config.allowedNumbers.length || config.allowAll) {
-    pass(config.allowAll ? 'Allowlist: ALLOW_ALL (open)' : `Allowlist: ${config.allowedNumbers.length} number(s)`);
+  if (config.allowAll) {
+    log.warn('! Allowlist: ALLOW_ALL (open — anyone can drive your agents)');
+  } else if (config.allowedNumbers.length || config.allowedIds.length) {
+    pass(`Allowlist: ${config.allowedNumbers.length} number(s), ${config.allowedIds.length} user id(s)`);
   } else {
-    fail('No authorized numbers', 'Set OPENCLAW_ALLOWED_NUMBERS in .env (digits only).');
+    fail(
+      'No authorized users',
+      'Set OPENCLAW_ALLOWED_NUMBERS (phone/WhatsApp) and/or OPENCLAW_ALLOWED_USERS (other channels) in .env.',
+    );
+  }
+
+  // Channels
+  const known = ['whatsapp', 'webhook', 'googlechat', 'wechat'];
+  const enabled = config.channels.filter((c) => known.includes(c));
+  const unknown = config.channels.filter((c) => !known.includes(c));
+  if (enabled.length) pass(`Channels enabled: ${enabled.join(', ')}`);
+  else fail('No valid channels', `Set OPENCLAW_CHANNELS to one or more of: ${known.join(', ')}.`);
+  if (unknown.length) log.warn(`! Unknown channels ignored: ${unknown.join(', ')}`);
+  if (enabled.includes('wechat')) {
+    try {
+      await import('wechaty');
+      pass('WeChat: wechaty installed');
+    } catch {
+      log.warn(`! WeChat enabled but wechaty not installed. Run: npm i wechaty ${config.wechat.puppet}`);
+    }
+  }
+  if (enabled.includes('webhook') && !config.webhook.token) {
+    log.warn('! Webhook channel has no OPENCLAW_WEBHOOK_TOKEN — add one to stop unauthorized posts.');
   }
 
   // Workdir

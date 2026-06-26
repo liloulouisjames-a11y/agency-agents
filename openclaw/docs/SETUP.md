@@ -233,3 +233,26 @@ journalctl --user -u openclaw -f        # systemd
 
 That's it. You now have a free, private, remote-controllable agency in your
 pocket. See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) if anything misbehaves.
+
+---
+
+## 11. More channels (WeChat, Google Chat, SMS/Phone Link)
+
+WhatsApp is just one channel. Enable more with
+`OPENCLAW_CHANNELS=whatsapp,webhook,googlechat,wechat` and see the
+**"Connecting each channel"** section in [../README.md](../README.md) for the
+per-channel setup (the channel matrix there also notes what each one requires).
+
+The quickest extra win is the **webhook** channel — point any SMS-forwarding app
+or automation at OpenClaw's HTTP endpoint to drive agents from regular texts.
+
+## 12. Free local agents with Ollama
+
+To run fully offline/free, build the `openclaw` model and switch the backend:
+
+```bash
+./scripts/build-ollama-model.sh        # creates the "openclaw" Ollama model
+# in .env:  OPENCLAW_BACKEND=ollama  and  OPENCLAW_OLLAMA_MODEL=openclaw
+```
+
+See [../ollama/README.md](../ollama/README.md) for base-model choices.
