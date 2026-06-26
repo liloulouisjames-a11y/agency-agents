@@ -1,0 +1,147 @@
+# 🐾 OpenClaw — Your Agency, on WhatsApp
+
+> Message your phone. Your AI agents do the work. **Run anywhere, free.**
+
+OpenClaw is a small, self-hosted gateway that links a WhatsApp account to
+[The Agency](../README.md)'s 50+ specialist agents through **Claude Code**.
+You text a job to your own WhatsApp number; the right specialist picks it up on
+your WSL/Linux/Mac machine and texts the result back. Because it drives the
+Claude Code CLI you already use, your agents are effectively **free remote
+labour** — no paid WhatsApp Business API, no extra subscription.
+
+```
+ 📱  You (WhatsApp)  ⇄  🐾 OpenClaw gateway (WSL)  ⇄  🤖 Claude Code + Agency agents  ⇄  💻 Your files
+```
+
+---
+
+## ✨ What you get
+
+- **Remote control of your agents** — kick off and steer work from your phone,
+  anywhere.
+- **All 58 Agency specialists** — `/use frontend`, `/use growth-hacker`,
+  `/use backend-architect`, … or `@agent` for a one-off.
+- **Free & private** — runs on your machine, links WhatsApp by QR (like
+  WhatsApp Web). Your messages never touch a third-party bot service.
+- **Conversation memory** — each chat keeps a resumable Claude session.
+- **Locked to you** — only numbers you allow-list can command your agents.
+- **One-click open on Windows** — double-click `openclaw.bat` to launch the
+  WSL gateway.
+
+---
+
+## 🚀 Quick start (WSL / Linux / macOS)
+
+From inside WSL (or any Linux/Mac shell):
+
+```bash
+# 1. Get the repo (if you haven't already) and enter the gateway
+cd ~/agency-agents/openclaw
+
+# 2. One-time setup: installs deps, creates .env, optionally installs the
+#    agents into Claude Code
+./scripts/setup.sh
+
+# 3. Tell OpenClaw who's allowed to drive it
+nano .env          # set OPENCLAW_ALLOWED_NUMBERS=<your number, digits only>
+
+# 4. Make sure Claude Code is installed and logged in
+claude             # log in once if prompted, then quit
+
+# 5. Sanity check
+npm run doctor
+
+# 6. Open the gateway
+./scripts/openclaw.sh
+```
+
+A QR code appears in the terminal. On your phone:
+**WhatsApp → Settings → Linked devices → Link a device → scan it.**
+
+Now text yourself `/help` and you're off. 🎉
+
+> **Windows users:** after the one-time WSL setup above, you can just
+> double-click **`openclaw.bat`** to open WSL and start the gateway. Edit the
+> `OPENCLAW_DIR` line in that file if your repo isn't at `~/agency-agents`.
+
+---
+
+## 💬 Using it from WhatsApp
+
+| Command | What it does |
+|---|---|
+| `/help` | Show the command list |
+| `/agents` | List all specialists you can call |
+| `/agents engineering` | List one category |
+| `/use frontend` | Switch the active specialist |
+| `/whoami` | Show the active specialist |
+| `/reset` | Clear conversation memory & active agent |
+| `/status` | Show current settings |
+| `@growth-hacker give me 5 launch ideas` | Use a specialist for one message only |
+| _anything else_ | Send the task to your active agent |
+
+**Example session**
+
+```
+You:  /use backend-architect
+Bot:  ✅ Switched to Backend Architect.
+You:  design a REST API for a todo app with auth, draft the route table
+Bot:  🐾 Backend Architect is on it…
+Bot:  Here's the route table… (full answer)
+You:  now scaffold it in the ~/todo project
+Bot:  …
+```
+
+---
+
+## ⚙️ Configuration (`.env`)
+
+Copy `.env.example` to `.env` and edit. Key settings:
+
+| Variable | Meaning |
+|---|---|
+| `OPENCLAW_ALLOWED_NUMBERS` | **Required.** Comma-separated allow-list, digits only (`14155550123`). |
+| `OPENCLAW_WORKDIR` | Folder your agents read/write in. Point it at a project to get real work done. |
+| `OPENCLAW_PERMISSION_MODE` | `acceptEdits` (default, safe-ish) · `bypass` (fully autonomous) · `default`. |
+| `OPENCLAW_DEFAULT_AGENT` | Agent slug to use when you haven't picked one. |
+| `OPENCLAW_TIMEOUT_SECONDS` | Max seconds per agent run (default 600). |
+| `OPENCLAW_CLAUDE_BIN` | Path to the `claude` binary if not on PATH. |
+
+See **[docs/SETUP.md](docs/SETUP.md)** for the full walkthrough and
+**[docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** when something misbehaves.
+
+---
+
+## 🔒 Security — read this
+
+OpenClaw lets a phone message run AI agents **on your computer**. Treat it like
+remote shell access:
+
+- **Always set `OPENCLAW_ALLOWED_NUMBERS`.** Never run with `OPENCLAW_ALLOW_ALL=true`
+  unless you fully understand the risk.
+- **`bypass` permission mode runs commands without asking.** Only use it with an
+  `OPENCLAW_WORKDIR` you're happy for an agent to act in (ideally a dedicated
+  project folder, not your home directory).
+- Secrets live in `.env` and the WhatsApp session in `.wwebjs_auth/` — both are
+  git-ignored. Don't commit them.
+- WhatsApp linking uses the same trust model as WhatsApp Web. Unlink the device
+  from your phone to instantly revoke access.
+
+---
+
+## 🧩 How it works
+
+1. `whatsapp-web.js` links a WhatsApp account over QR and streams your messages.
+2. `commands.js` parses each message (slash-command or task) and picks the
+   active specialist.
+3. `agents.js` loads the chosen agent's Markdown personality from the Agency.
+4. `claude-runner.js` runs `claude -p` headlessly with that personality as the
+   system prompt, resuming a per-chat session for memory.
+5. The reply is chunked and texted back to you.
+
+No application servers, no inbound ports — it's an outbound client, so it works
+from behind home NAT/WSL with zero networking setup.
+
+---
+
+MIT licensed, like the rest of The Agency.

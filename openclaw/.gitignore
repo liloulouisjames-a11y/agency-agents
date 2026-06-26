@@ -1,0 +1,8 @@
+# Local secrets & runtime state — never commit these
+.env
+node_modules/
+.wwebjs_auth/
+.wwebjs_cache/
+*.log
+logs/
+sessions.json
