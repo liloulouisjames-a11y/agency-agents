@@ -62,6 +62,28 @@ Browse the agents below and copy/adapt the ones you need!
 
 See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for full details.
 
+### Option 4: Run them remotely from WhatsApp (🐾 OpenClaw Gateway)
+
+Want to put these agents to work from your phone? The **[OpenClaw Gateway](openclaw/README.md)**
+is a free, self-hosted bridge that links WhatsApp to the Agency through Claude
+Code. Text a job to your own number and the right specialist does it on your
+WSL/Linux/Mac machine, then texts the result back — your agents become a remote
+workforce you can drive from anywhere. Send text, images, or voice notes.
+
+```bash
+cd openclaw
+./scripts/setup.sh          # install deps + create config
+# add your number to .env, then:
+./scripts/openclaw.sh       # scan the QR with WhatsApp → Linked devices
+```
+
+Windows users can just double-click `openclaw/openclaw.bat` to open WSL and
+launch it. See **[openclaw/README.md](openclaw/README.md)** for the full guide.
+
+> Not to be confused with the [OpenClaw **agent-runtime integration**](integrations/openclaw/README.md)
+> (installs these agents into the OpenClaw CLI). This gateway is a separate,
+> WhatsApp-facing remote bridge.
+
 ---
 
 ## 🎨 The Agency Roster
