@@ -1,0 +1,104 @@
+{
+  "theme": "flat-motion-graphics",
+  "cuts": [
+    {
+      "id": "sb-hook",
+      "source": "",
+      "type": "hero_title",
+      "in_seconds": 0,
+      "out_seconds": 3.6,
+      "text": "Shanghai Beauty · 上海丽人",
+      "heroSubtitle": "Beauty, redefined.",
+      "backgroundImage": "brand/sb-bg.png",
+      "backgroundOverlay": 0.15
+    },
+    {
+      "id": "sb-services",
+      "source": "",
+      "type": "text_card",
+      "in_seconds": 3.6,
+      "out_seconds": 7.2,
+      "text": "Hair · Nails · Facials · Lashes",
+      "subtitle": "Premium care at every visit",
+      "color": "#FAF7F2",
+      "backgroundColor": "#2A1A22"
+    },
+    {
+      "id": "sb-stars",
+      "source": "",
+      "type": "stat_card",
+      "in_seconds": 7.2,
+      "out_seconds": 10.8,
+      "stat": "5★",
+      "subtitle": "the only standard we accept",
+      "accentColor": "#D4AF37",
+      "backgroundColor": "#1C1017"
+    },
+    {
+      "id": "sb-effect",
+      "source": "",
+      "type": "comparison",
+      "in_seconds": 10.8,
+      "out_seconds": 14.8,
+      "title": "The Shanghai Beauty effect",
+      "leftLabel": "You arrive",
+      "leftValue": "Stressed",
+      "rightLabel": "You leave",
+      "rightValue": "Glowing",
+      "backgroundColor": "#2A1A22"
+    },
+    {
+      "id": "sb-glow",
+      "source": "",
+      "type": "progress_bar",
+      "in_seconds": 14.8,
+      "out_seconds": 18.6,
+      "progress": 100,
+      "progressLabel": "Glow level after one visit",
+      "progressColor": "#E8B4B8",
+      "backgroundColor": "#1C1017"
+    },
+    {
+      "id": "sb-motto",
+      "source": "",
+      "type": "text_card",
+      "in_seconds": 18.6,
+      "out_seconds": 22.2,
+      "text": "Walk in. Glow out.",
+      "subtitle": "走进来，美出去。",
+      "color": "#FAF7F2",
+      "backgroundColor": "#2A1A22"
+    },
+    {
+      "id": "sb-cta",
+      "source": "",
+      "type": "hero_title",
+      "in_seconds": 22.2,
+      "out_seconds": 26.5,
+      "text": "Shanghai Beauty",
+      "heroSubtitle": "Book your appointment today · 立即预约",
+      "backgroundImage": "brand/sb-bg.png",
+      "backgroundOverlay": 0.15
+    }
+  ],
+  "overlays": [
+    {
+      "type": "section_title",
+      "in_seconds": 3.8,
+      "out_seconds": 6.9,
+      "text": "Signature services",
+      "accentColor": "#E8B4B8"
+    },
+    {
+      "type": "stat_reveal",
+      "in_seconds": 11.2,
+      "out_seconds": 14.4,
+      "text": "★★★★★",
+      "subtitle": "loved by our clients",
+      "accentColor": "#D4AF37",
+      "position": "bottom-right"
+    }
+  ],
+  "captions": [],
+  "audio": {}
+}

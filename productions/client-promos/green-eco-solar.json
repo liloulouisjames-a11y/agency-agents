@@ -1,0 +1,111 @@
+{
+  "theme": "flat-motion-graphics",
+  "cuts": [
+    {
+      "id": "ges-hook",
+      "source": "",
+      "type": "hero_title",
+      "in_seconds": 0,
+      "out_seconds": 3.6,
+      "text": "Green Eco Solar",
+      "heroSubtitle": "Solar panels & certified electricians · Mauritius",
+      "backgroundImage": "brand/ges-bg.png",
+      "backgroundOverlay": 0.15
+    },
+    {
+      "id": "ges-pain",
+      "source": "",
+      "type": "text_card",
+      "in_seconds": 3.6,
+      "out_seconds": 7.2,
+      "text": "Your CEB bill doesn't have to hurt.",
+      "subtitle": "There's a smarter way to power your home.",
+      "color": "#F8FAFC",
+      "backgroundColor": "#064E3B"
+    },
+    {
+      "id": "ges-stat",
+      "source": "",
+      "type": "stat_card",
+      "in_seconds": 7.2,
+      "out_seconds": 11,
+      "stat": "-80%",
+      "subtitle": "off your CEB electricity bill — powered by Mauritian sunshine",
+      "accentColor": "#FBBF24",
+      "backgroundColor": "#052E16"
+    },
+    {
+      "id": "ges-compare",
+      "source": "",
+      "type": "comparison",
+      "in_seconds": 11,
+      "out_seconds": 15.2,
+      "title": "A typical monthly CEB bill",
+      "leftLabel": "Before solar",
+      "leftValue": "Rs 6,000",
+      "rightLabel": "After solar",
+      "rightValue": "Rs 1,200",
+      "backgroundColor": "#064E3B"
+    },
+    {
+      "id": "ges-kpis",
+      "source": "",
+      "type": "kpi_grid",
+      "in_seconds": 15.2,
+      "out_seconds": 19.8,
+      "title": "Why Mauritius chooses Green Eco Solar",
+      "columns": 2,
+      "chartData": [
+        { "label": "max CEB bill reduction", "value": 80, "suffix": "%", "icon": "☀" },
+        { "label": "panel lifespan", "value": 25, "suffix": "+ yrs", "icon": "🔋" },
+        { "label": "days on-site install", "value": 3, "prefix": "1–", "icon": "⚡" },
+        { "label": "star service, A→Z CEB paperwork", "value": 5, "suffix": "★", "icon": "📋" }
+      ],
+      "chartColors": ["#F59E0B", "#16A34A", "#15803D", "#CA8A04"],
+      "backgroundColor": "#ECFDF5"
+    },
+    {
+      "id": "ges-paperwork",
+      "source": "",
+      "type": "text_card",
+      "in_seconds": 19.8,
+      "out_seconds": 23.4,
+      "text": "CEB paperwork? Handled — from A to Z.",
+      "subtitle": "You just watch the bill drop.",
+      "color": "#F8FAFC",
+      "backgroundColor": "#064E3B"
+    },
+    {
+      "id": "ges-cta",
+      "source": "",
+      "type": "hero_title",
+      "in_seconds": 23.4,
+      "out_seconds": 27.8,
+      "text": "Ready to slash your CEB bill?",
+      "heroSubtitle": "Free quote · gesmu.edgeone.app · TikTok @greenecosolar",
+      "backgroundImage": "brand/ges-bg.png",
+      "backgroundOverlay": 0.15
+    }
+  ],
+  "overlays": [
+    {
+      "type": "section_title",
+      "in_seconds": 11.3,
+      "out_seconds": 14.8,
+      "text": "Savings",
+      "subtitle": "Illustrative household example",
+      "accentColor": "#FBBF24"
+    },
+    {
+      "type": "stat_reveal",
+      "in_seconds": 15.6,
+      "out_seconds": 19.4,
+      "text": "★★★★★",
+      "subtitle": "rated by our customers",
+      "accentColor": "#FBBF24",
+      "position": "bottom-right"
+    }
+  ],
+  "captions": [],
+  "audio": {}
+}
