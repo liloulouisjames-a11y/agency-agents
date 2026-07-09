@@ -1,11 +1,1391 @@
 {
   "version": 1,
   "skills": {
+    "accessibility-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/accessibility-review/SKILL.md",
+      "computedHash": "5a75a7e4a9fd61c453a73c4c48549518d58f95f84f5b4a19f33310e110e7a48e"
+    },
+    "account-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/account-research/SKILL.md",
+      "computedHash": "8e17bf0b44d475bc43142fd4aa6d74fddb8f15b7c8b910066f3b3528a9c81521"
+    },
+    "ad-copy": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/copywriting/skills/ad-copy/SKILL.md",
+      "computedHash": "f07a73582604a1d8fa33786f9e8a3b62a27e1c6f5cead991ee80c9a605d21441"
+    },
+    "aml-cdd-edd": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/aml-cdd-edd/SKILL.md",
+      "computedHash": "2649679fb62d77c213819bc4a79d51a5876963ab83515a8ddd5bd52f8930297e"
+    },
+    "aml-sar-drafting": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/aml-sar-drafting/SKILL.md",
+      "computedHash": "55d9a871270803652385fae431dc2f14e552f0941ba9eca7b9cfcb3caaa1c77f"
+    },
+    "aml-typologies": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/aml-typologies/SKILL.md",
+      "computedHash": "f145142824eac5cf77e43ecc22cd2a12116325a34b9fb3e1115b0a250e1c99dc"
+    },
+    "analyze": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/analyze/SKILL.md",
+      "computedHash": "9c0f254bb436bfdaeb26e798d23204c531b976d42eefb668408057102177b995"
+    },
+    "architecture": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/architecture/SKILL.md",
+      "computedHash": "8ef4c706c57c5557253a201159b2f81dc0865fe6b477693204dad1ce231bd446"
+    },
+    "architecture-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/code-review/skills/architecture-review/SKILL.md",
+      "computedHash": "2fcbc6a04218a3dc956975f1e176279db010c143fcaf28fcb139ec2646773547"
+    },
+    "audit": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "operations-intelligence/skills/audit/SKILL.md",
+      "computedHash": "18736a41d36f1c58396f7a5470cee6c307a55afe3cedd7ed44f3dda2324a367d"
+    },
+    "audit-support": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/audit-support/SKILL.md",
+      "computedHash": "eb71c559ce589d5d6921a671add76459b9c23b8dc19fb64f1466c4a9fd1c835b"
+    },
+    "autoresearch": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "autoresearch/SKILL.md",
+      "computedHash": "f623b156df0840b9c528d63d026a90f4562cae054d86e7cdc49f5afb0fb114e8"
+    },
+    "bank-reconciliation": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/bank-reconciliation/SKILL.md",
+      "computedHash": "7cb245f8d5fb7aa14200833658a7da98e52cc37ecaa469073be707f8f27beaea"
+    },
+    "banking-global-router": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/banking-global-router/SKILL.md",
+      "computedHash": "7b0c3caaa6bc81823d75a220ace9022d94c05ea74e6a251c497ea61962c4853f"
+    },
+    "basel-capital": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/basel-capital/SKILL.md",
+      "computedHash": "f6e92b4ee7bd2e6940654f8ee69833e08b43c7c081c2dff39d22f0ffb17151db"
+    },
+    "basel-rwa-credit": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/basel-rwa-credit/SKILL.md",
+      "computedHash": "7d436c30ab7cc75791ffc9b83ba09dd6fd891fbf093a06618225913070aaeafa"
+    },
+    "basel-rwa-market": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/basel-rwa-market/SKILL.md",
+      "computedHash": "90af96f2a72c4beddda26c269b5961d0e9648674d0e6cc56b510d861c12da994"
+    },
+    "blog-writer": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/content-creation/skills/blog-writer/SKILL.md",
+      "computedHash": "345a7fb86e851f34e555252b1ac4bf1ccb6b07bc3655b7af9d976b223ecede53"
+    },
+    "brainstorm": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/ideation/skills/brainstorm/SKILL.md",
+      "computedHash": "9f2d14ce9de2561135bdfd1112eba6bc943bb03c93134dba675064ce7358a32f"
+    },
+    "brand-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/brand-review/SKILL.md",
+      "computedHash": "88b445f756f181202bcf565ef18a4f8d66cef202bde72daf3fe4254049a96801"
+    },
+    "brief": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "product-strategy/skills/brief/SKILL.md",
+      "computedHash": "28d6b571c93a8ef6e73ea65e8e36009ad00851c24c4dad3b1b4d7a2484c7a9ec"
+    },
+    "bug-report": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/qa/skills/bug-report/SKILL.md",
+      "computedHash": "60a38c871a94c564eca354b22d719b2b93c64525705566f1f233cff4272b38e9"
+    },
+    "build-dashboard": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/build-dashboard/SKILL.md",
+      "computedHash": "49857a97685c3f7b17ae9488c9b752f23dbeba3b5a8afde270bc0f1e283a49d7"
+    },
+    "call-prep": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/call-prep/SKILL.md",
+      "computedHash": "e036580ab481e0ee99ac2df7e6c47be1f44c27782d5f0dbb904e536e7ddcb0b1"
+    },
+    "call-summary": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/call-summary/SKILL.md",
+      "computedHash": "2b9a2291d703f7838755dc8b93166e373e7eb9b767e72aed369fa4ab7a579af9"
+    },
+    "campaign-plan": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/campaign-plan/SKILL.md",
+      "computedHash": "3dbdaf79c84a6e2c756cdd6dc07df6a9a43fad37acb8af07142db207fc396569"
+    },
+    "campaign-planning": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/campaign-planning/SKILL.md",
+      "computedHash": "406633a7a1b2fd86c347e0d61a0f35720efe843d72957ece46c9298d98a6397e"
+    },
+    "canvas": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/canvas/SKILL.md",
+      "computedHash": "7e09b2d85fd565b63281ef321f348c3360593397a236dea03908ba0ae106dcb7"
+    },
+    "capacity-plan": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/capacity-plan/SKILL.md",
+      "computedHash": "e2b749997b46e5b780bcbb64e03625f0eab5c8895870edd197b1981520a4b7a3"
+    },
+    "change-request": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/change-request/SKILL.md",
+      "computedHash": "8f6a36933c18d0a6aab754501d17a138e0095d3ec8f26a5ecfed24f723bb8593"
+    },
+    "close-management": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/close-management/SKILL.md",
+      "computedHash": "773712041ca77f991649d13be25523bf17059de2a817c27f30ae2fdc52ed37dd"
+    },
+    "closed-loop-analytics-upgrade": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "closed-loop-analytics-upgrade/SKILL.md",
+      "computedHash": "c8753a309aa161212594b15fb6d8bd5b2b51eca5d4d756e417ee50dfc8e25c20"
+    },
+    "code-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/code-review/skills/code-review/SKILL.md",
+      "computedHash": "0b58c14ff6c508a4ecfb38f502ae1ac9ae129cc3292ed53127e8417561549f84"
+    },
+    "cold-outbound-optimizer": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "outbound-engine/SKILL.md",
+      "computedHash": "912e62148ecc060e6fa6b066ab59b472a316d24ba9df762cd1c43fcb0dc3ac0c"
+    },
+    "comp-analysis": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/comp-analysis/SKILL.md",
+      "computedHash": "3a23b25c1380f03f4a440fee6fe7f18bcd0af31bd150447245768ccc1df088cc"
+    },
+    "competitive-brief": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/competitive-brief/SKILL.md",
+      "computedHash": "8719712fb07f67b1858d57375d2e3815969c04bddaf0a752dbaf7f230cc286f5"
+    },
+    "competitive-intelligence": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/competitive-intelligence/SKILL.md",
+      "computedHash": "ab05e382d9c42e8ea630aa64b2f479cbc04887ed0707a4eec3f7b40a853f50a2"
+    },
+    "compliance-calendar": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "legal-ops/skills/compliance-calendar/SKILL.md",
+      "computedHash": "51c981adb8133ab513c7937520a1f3a773048b882b13e021e5633322486a923f"
+    },
+    "compliance-check": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/compliance-check/SKILL.md",
+      "computedHash": "4239141502966ed01ea54d4313743935372c780474a279096edf9bf6344a9c73"
+    },
+    "compliance-tracking": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/compliance-tracking/SKILL.md",
+      "computedHash": "a9a82d24c26a0896ad00915ead908045156713256f4cc2796207078df22256c3"
+    },
+    "concept-explainer": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/education/skills/concept-explainer/SKILL.md",
+      "computedHash": "074c491ae938670b159c6d7b660ad3b08779cc7dd580d89b65178abd234cb0e4"
+    },
+    "content-calendar": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/content-calendar/SKILL.md",
+      "computedHash": "9597b0b675eed031cec7b4650bebb5224865a168cc9ad0a12c8574b511ddd107"
+    },
+    "content-creation": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/content-creation/SKILL.md",
+      "computedHash": "e4afa49232a43532a2577abb79d1f10792f2e2c723aac044454ae44e31c5b587"
+    },
+    "content-repurposer": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/content-creation/skills/content-repurposer/SKILL.md",
+      "computedHash": "84ab028cc4f55319fb4853355fc4aede45a742be2eed63d4043e2a1198f0fe7f"
+    },
+    "context-loader": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/context-loader/SKILL.md",
+      "computedHash": "90d5f3cf2b29034b81ce27cbbff986d5a49da14a71357bfbe14c62264037fee5"
+    },
+    "contract": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "operations-intelligence/skills/contract/SKILL.md",
+      "computedHash": "5daccf8b11b6f923881e44f3c32fd35587b7ac93d33cb5e9dcbca92cea7973f1"
+    },
+    "copywriting": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/copywriting/SKILL.md",
+      "computedHash": "a3441a6f389c4f98ca0068d98e7c6ecc93ad91066031e5a1ca1c0e4ea56d8d81"
+    },
+    "create-an-asset": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/create-an-asset/SKILL.md",
+      "computedHash": "9cb990d16e6a8aa147025b6bd9bccdc4ac4f02ff7559f045e7693e53cd6ad5f1"
+    },
+    "create-viz": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/create-viz/SKILL.md",
+      "computedHash": "1c6ef769fa0706e7d67c68eb18e113c6904f22e27027fadeb38cc3904c78e1e5"
+    },
+    "crm-enrichment": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/crm-enrichment/SKILL.md",
+      "computedHash": "11e9f84975542c6e52dc5d5c24cb526a64610f2d30eab93606ed90c63e20f849"
+    },
+    "customer-escalation": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/customer-support/skills/customer-escalation/SKILL.md",
+      "computedHash": "444737ec9288b94e5660f1cb9b9ef579a4c684710bb7751a0e12573f5228dd50"
+    },
+    "customer-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/customer-support/skills/customer-research/SKILL.md",
+      "computedHash": "bc85942daddbcf16e8133cf217a98acccef55c3f0d74c74b782993e2d247f7fa"
+    },
+    "daily-briefing": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/daily-briefing/SKILL.md",
+      "computedHash": "3f86afd9b78499d21b59efecad2e8c04a47b4b0fff1280acaf33a0f9b6e44f9a"
+    },
+    "data-context-extractor": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/data-context-extractor/SKILL.md",
+      "computedHash": "93ed60130e03fcc86069ca2bd5efb1afa65d8fca6bab56139746a5d7300092d5"
+    },
+    "data-visualization": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/data-visualization/SKILL.md",
+      "computedHash": "64055493de5ff4afed716cc871018cf6e020338b76d3e7ed5c2985707cb43cec"
+    },
+    "debug": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/debug/SKILL.md",
+      "computedHash": "841cbdfef0e10873f6200f060d21899538b18366e0a426dfab5c4f434dd72b0a"
+    },
+    "deck-generator": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "deck-generator/SKILL.md",
+      "computedHash": "b932ac92d463b9f62fa187484303f3d5ab95bfb5270cbc956c194da85aa9cd7c"
+    },
+    "deep-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/research/skills/deep-research/SKILL.md",
+      "computedHash": "13915681f7d522ba8b3db53e40e74e0781962294ffefa0d7af61a39b88ded7db"
+    },
+    "delegation": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/delegation/SKILL.md",
+      "computedHash": "5067c5ca36d57899b92b8e34c40c943b645357ccc2aa237d9292d9477519c676"
+    },
+    "deploy-checklist": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/deploy-checklist/SKILL.md",
+      "computedHash": "57c31f95222b38dc7cb3aab7716ba6a755ecdbfc74bfbc3a24a18958d68efa3c"
+    },
+    "deploy-monitor": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/devops/skills/deploy-monitor/SKILL.md",
+      "computedHash": "af41b47ad63588f78ebbf279fae01279e63479c0699d8a3df5a7da11d03563e5"
+    },
+    "design-critique": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/design-critique/SKILL.md",
+      "computedHash": "015262d9bee2c50db8f542c831c53afe6e80f4e738fd48b474553fb7089897ec"
+    },
+    "design-handoff": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/design-handoff/SKILL.md",
+      "computedHash": "bb86edd6bfea6afebe65871ddd0128afa59f652725a4561ce9c967ea120542c3"
+    },
+    "design-system": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/design-system/SKILL.md",
+      "computedHash": "34d7702c56e412a481887706f9aef8229d70f8026a6391ff068af665784e6ccc"
+    },
+    "digest": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/digest/SKILL.md",
+      "computedHash": "fb6964d65c8717b9ee81019a8d89835d53948e1085913b1267605513f39b9f65"
+    },
+    "discovery": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/discovery/SKILL.md",
+      "computedHash": "917d7d4415f7ba76f6de70a61ea5f16b189e7693b27eadf4e0d9a1d0085b4752"
+    },
+    "documentation": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/documentation/SKILL.md",
+      "computedHash": "c24a1672a7edad51225859d6549d9a61892f704a4527a65ce3cddd913ca04550"
+    },
+    "draft-assist": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/writing/skills/draft-assist/SKILL.md",
+      "computedHash": "4de3e2f1d52db72421fd3b27a0e828876403e9b4c49dba8d05855eb50f67c119"
+    },
+    "draft-content": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/draft-content/SKILL.md",
+      "computedHash": "60a6e5dde7810aaa65bee4f51595aadd9546011b79e745da554e63702c7fd903"
+    },
+    "draft-offer": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/draft-offer/SKILL.md",
+      "computedHash": "f12b3156a25159e0ba7c860af1e1db1766ffbc8eb2d2e96be420fed70b75aa8c"
+    },
+    "draft-outreach": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/draft-outreach/SKILL.md",
+      "computedHash": "467cadcfce18bf640ba519a3bd21d1a0caf69ef944dae4e0b425006122475436"
+    },
+    "draft-response": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/customer-support/skills/draft-response/SKILL.md",
+      "computedHash": "05ca94552a9babc7f6bdfe7aa075744e811d650a88d75f2edc1737d172ef4665"
+    },
+    "dsar-privacy": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "legal-ops/skills/dsar-privacy/SKILL.md",
+      "computedHash": "f1395317f6d839a8d37cc668009dc18c25aa4f599e74dd9dac2dbeeffa6a5b56"
+    },
+    "edit-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/writing/skills/edit-review/SKILL.md",
+      "computedHash": "471376b7ec256218233c6c27579774717e8ab9093cdfc6eecb9ed33421e6f6d2"
+    },
+    "email-sequence": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/email-sequence/SKILL.md",
+      "computedHash": "6f377a047b65d083b734953e3586002c64db07e6497751c9a9d41870954822a9"
+    },
+    "engagement-plan": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/community/skills/engagement-plan/SKILL.md",
+      "computedHash": "ce7999d7bab3a42b134c731facc264125d4d9aba8c9346623e5c15da338cffce"
+    },
+    "evening-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/personal-assistant/skills/evening-review/SKILL.md",
+      "computedHash": "26ceef86063350e6a1211667f0732e2b78cb78430925ab411ec27c80fc3aee1b"
+    },
+    "executive-brief": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/executive-brief/SKILL.md",
+      "computedHash": "897af5625dd9f19c653caad9ab47d4d14c48b9fce9fa64448b3a56579ee57e66"
+    },
+    "experiment-design": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/growth/skills/experiment-design/SKILL.md",
+      "computedHash": "e7933775f8877100f8c89d50d5eb4af84bc47d2eabd24bb97dc4d7c3282edc42"
+    },
+    "expert-panel": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "content-ops/SKILL.md",
+      "computedHash": "fa9a446e256e752c5ee239b93856f61ad2a6f674744738414a4e44eea7919758"
+    },
+    "explore-data": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/explore-data/SKILL.md",
+      "computedHash": "e4b78b14b22347c832e9d669a8141bf697519d36a6ef8578fc7f6cbfb1f1814e"
+    },
+    "finance-ops": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "finance-ops/SKILL.md",
+      "computedHash": "c535c22bd83189ff93e7f894ac848f2a7f2d06e8a7fe0f64db74d210bd9f825e"
+    },
+    "financial-architect": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "idfa-financial-architect/skills/financial-architect/SKILL.md",
+      "computedHash": "3e81ab3b9b6a57ebc5d6a07da9a70397699e3b549b785d0981f0e121eecffe44"
+    },
+    "financial-statements": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/financial-statements/SKILL.md",
+      "computedHash": "18653cdcc659e3ce8ff8d1752290e6a121d43eac67816dd61784ec391a1e62a4"
+    },
+    "financials": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/financials/SKILL.md",
+      "computedHash": "2ce87467d058c450ce21bded85558686bf8c9d96cc0f3aae2269577b407413df"
+    },
+    "follow-up": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/follow-up/SKILL.md",
+      "computedHash": "fed1eb4ae0500e9e889116b557ca797a79759e10299a34a27c894ee724394f62"
+    },
+    "forecast": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/forecast/SKILL.md",
+      "computedHash": "14682209e59ec44c848fa099335af84c67f8d5e0180e5567b44b303cdf4bac1e"
+    },
+    "funnel-analysis": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/growth/skills/funnel-analysis/SKILL.md",
+      "computedHash": "5e336c0d82afa55c4ee85ac94bbb705bac44567cfcd32e06dfd92dc9222dc82c"
+    },
+    "gtm": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/gtm/SKILL.md",
+      "computedHash": "01c9f1b6a730f98946ac1fd9fa30a17f5a4af43438d9bec7925af5956567615b"
+    },
+    "hypothesis": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/hypothesis/SKILL.md",
+      "computedHash": "95e1bf79a413f57223e2583674f59498743413493329dfaff446851b63acdc1f"
+    },
+    "idea": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/idea/SKILL.md",
+      "computedHash": "794fa9e905f11885fad8b29247a5d5df7fdc2c73e5c0c4042b5735ce2a233a26"
+    },
+    "idea-evaluation": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/ideation/skills/idea-evaluation/SKILL.md",
+      "computedHash": "e1344998b4bd517c48d06a2bdf5b182c760becd71786015513fc67a6a401a1af"
+    },
+    "idfa-ops": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "idfa-financial-architect/skills/idfa-ops/SKILL.md",
+      "computedHash": "0eaee666294c41b8ed86057b2de60bb08c5636d38d8a1ba093d87deb206b594b"
+    },
+    "ifrs9-disclosure": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/ifrs9-disclosure/SKILL.md",
+      "computedHash": "e921886bf293eb84317ca33b98b77aa234b58b56df18da41322aca3bdfcfb6bc"
+    },
+    "ifrs9-ecl": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/ifrs9-ecl/SKILL.md",
+      "computedHash": "c8ba027d480438e02f6c4bef3358ffb61ed95946941d63020f8bf9a06bdad447"
+    },
+    "ifrs9-scenarios": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/ifrs9-scenarios/SKILL.md",
+      "computedHash": "e5f6b184b3464ddd626282be8170f4e10ea1b22bce76787f12d705f5b361b878"
+    },
+    "ifrs9-staging": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/ifrs9-staging/SKILL.md",
+      "computedHash": "a1c5777cc5b9c9aeb687359696be805c5a6f59d969b0ea4685ddee9d6f77aaca"
+    },
+    "ijarah-imb": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/ijarah-imb/SKILL.md",
+      "computedHash": "be82fe1881ae8721c75a69a9195070941d2456f087785d58a4395351a5324bd6"
+    },
+    "incident": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "operations-intelligence/skills/incident/SKILL.md",
+      "computedHash": "4d3132603a9d2c378cb95e74fa45ecb5eddc1d0da2170ab26478e5f09ad95ede"
+    },
+    "incident-response": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/devops/skills/incident-response/SKILL.md",
+      "computedHash": "1b45e736bf9fc2d254fae77cbc0e7216d43cd0c73e4caa5781971592d02c5c27"
+    },
+    "infrastructure-audit": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/devops/skills/infrastructure-audit/SKILL.md",
+      "computedHash": "c58fba57bc709f4a78085ac838d63ee331f1f0a2f3310b755d15138cdd2520f6"
+    },
+    "interview": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "product-strategy/skills/interview/SKILL.md",
+      "computedHash": "c8b1b0089bcd179483563a40b0b455f29bc4b6cab9b2f10e7d1d24a22d60e224"
+    },
+    "interview-prep": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/interview-prep/SKILL.md",
+      "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
+    },
+    "invoice-reconciliation": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/invoice-reconciliation/SKILL.md",
+      "computedHash": "06a36ceaba5dd9b5381df5447e30c2a11c8835b18fc8ec5627e3b2513a2e33b9"
+    },
+    "ip-protection": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "legal-ops/skills/ip-protection/SKILL.md",
+      "computedHash": "fd2aefc4299230c28761f1afc98daa8e39e21094884490c15c78d145a4dc9576"
+    },
+    "islamic-finance-router": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/islamic-finance-router/SKILL.md",
+      "computedHash": "4c72253564b6203dbeaf7d4c46dce3aebd35d281df38bb21ad752d33f0cf2534"
+    },
+    "istisna-a": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/istisna-a/SKILL.md",
+      "computedHash": "f5e483e57065252b8c7ee0461ed30045d0675d684e16535956d67d15ad269a62"
+    },
+    "jd": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "hr-operations/skills/jd/SKILL.md",
+      "computedHash": "f7d4420a138d93b237befefa51d53d270d92e300e7d76eed9d3aed646a6d921a"
+    },
+    "journal-entry": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/journal-entry/SKILL.md",
+      "computedHash": "4bd1669975796750cb5abe55c3a937e37ca61730b3eaac237f646b06abd2c459"
+    },
+    "journal-entry-prep": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/journal-entry-prep/SKILL.md",
+      "computedHash": "315b13a894377b49ad598b0c3a708a3553bd14f4047c4e5bbc92d551e4ff4c26"
+    },
+    "kb-article": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/customer-support/skills/kb-article/SKILL.md",
+      "computedHash": "205941f29738f0914b39e59e2b0031bb62a835a353ec4a26358f64875635e01a"
+    },
+    "keyword-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/seo/skills/keyword-research/SKILL.md",
+      "computedHash": "2d99d38fad83acad4fde2cde987377360bd560c160024908846c25621496c8fa"
+    },
+    "knowledge": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "hr-operations/skills/knowledge/SKILL.md",
+      "computedHash": "647be477de2986d59b50f42c5d771aa40c684e5aae9a46556955b7fcec7cec89"
+    },
+    "kyc-risk-rating": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/kyc-risk-rating/SKILL.md",
+      "computedHash": "316beae13b428d4fca5ab8c362118a9be0a6b975ee7059131de51c8f13f25466"
+    },
+    "landing-page-copy": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/copywriting/skills/landing-page-copy/SKILL.md",
+      "computedHash": "150e9a60f3bf5681edcaed5c03f4cca88c54e9c4239a4d7c1c02c33e877ffb31"
+    },
+    "lead-scoring": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/lead-scoring/SKILL.md",
+      "computedHash": "be5f914f7285ef5ef54e65bee703d2e7802b92e2deaf13a235e925390b104469"
+    },
+    "legal-global-router": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "legal-ops/skills/legal-global-router/SKILL.md",
+      "computedHash": "4a6c22c91b5fdc209b96549e0a89dcf1e3276df6ff8302696413f3df06dbfa4e"
+    },
+    "legal-response": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/legal-response/SKILL.md",
+      "computedHash": "ebfc08344732683ef510136dc0d2886c6489b805bf5d5f818e2c5a3d1cb429e2"
+    },
+    "legal-risk-assessment": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/legal-risk-assessment/SKILL.md",
+      "computedHash": "fbc4dffe38a8b8d59ccee1d016654497dc1d9f2f4ceb5ca632dcb4715d22c07f"
+    },
+    "legal-spend": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "legal-ops/skills/legal-spend/SKILL.md",
+      "computedHash": "bff4dbe614442f08f4ac862e9409343bbe18d49b77c0f5830070ac5a008b24bb"
+    },
+    "liquidity-lcr": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/liquidity-lcr/SKILL.md",
+      "computedHash": "310fdfc51307b8f0b26db1c757d805f1941914a0a1950a4d253de7e35bcc949a"
+    },
+    "liquidity-nsfr": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/liquidity-nsfr/SKILL.md",
+      "computedHash": "aeae8a5d27b75b12b90c6bce412251d182b7cfedd8a2061301b08e2350fe6040"
+    },
+    "listing-audit": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/ecommerce/skills/listing-audit/SKILL.md",
+      "computedHash": "99bde6112beefc611c703b09da144d9df26de2b7a16436185b13d5d10bd247a8"
+    },
+    "logistics-brief": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/logistics-brief/SKILL.md",
+      "computedHash": "f34dc65f36b7c0fa0c9e0b815b6c10cd535b788b5f2e0962d70762c3c633d637"
+    },
+    "market": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/market/SKILL.md",
+      "computedHash": "57545307c3fb9632918a5c48787799ab83f2fc0ab54786be5872066ac3010a98"
+    },
+    "market-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/startup-advisor/skills/market-research/SKILL.md",
+      "computedHash": "22e2997a9cdfab8ee6632830086f4f94fef0083f03374c07bcdf6bab94b93c2e"
+    },
+    "match": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "hr-operations/skills/match/SKILL.md",
+      "computedHash": "ebc58c70d0861760a8757512253c2034111611081b30b178507e06fa340755f5"
+    },
+    "meeting-briefing": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/meeting-briefing/SKILL.md",
+      "computedHash": "be14297008437408fc23e249da0e3c80373f0db38abbd66623e64485177352f7"
+    },
+    "meeting-intelligence": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/meeting-intelligence/SKILL.md",
+      "computedHash": "3b33301c90475e53900a8d1292572a3739c84d6ac5a465bf2a6d425d837031ad"
+    },
+    "metrics": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "operations-intelligence/skills/metrics/SKILL.md",
+      "computedHash": "e44e7e8256a2a3abe30b1b1db6b5f788c65ac94e4007dcb9b7e57cadbc64d561"
+    },
+    "metrics-analysis": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/startup-advisor/skills/metrics-analysis/SKILL.md",
+      "computedHash": "a641f05cea46d2f428920bc2aecc639f91aef1ac8b179dbe665b0d67f5d8970d"
+    },
+    "metrics-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/metrics-review/SKILL.md",
+      "computedHash": "a1b4253a7b75afd2d46830132c2e6268f3ce87640a9791e7fcbe8ec93720a7ed"
+    },
+    "moderation-guide": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/community/skills/moderation-guide/SKILL.md",
+      "computedHash": "4cb7733cc4b3b271148105d865f734b3e3636909d7d3dfd2fc28337d0c646e6f"
+    },
+    "morning-plan": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/personal-assistant/skills/morning-plan/SKILL.md",
+      "computedHash": "1e1d1452f7e2f0127d892c21263be2fe910a70e4a06f64a6bd9d3a0d576ed497"
+    },
+    "mudaraba": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/mudaraba/SKILL.md",
+      "computedHash": "6ad6a31cea2419f1ad3439077bda543b0fe3b975c9be38acfdbd4a7c80a9b6ba"
+    },
+    "murabaha": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/murabaha/SKILL.md",
+      "computedHash": "8dd7347bd84e30a6e9e9c8b6765e36f8ee2e96af779db6566f8dc485ec26ba33"
+    },
+    "musharaka-dm": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/musharaka-dm/SKILL.md",
+      "computedHash": "d74f9f8d27c463e982095de1f05423ada8c47bb8db308c0ba90f823dbfa9a6e3"
+    },
+    "musharaka-full": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/musharaka-full/SKILL.md",
+      "computedHash": "55247279113c64ea87106e416b1711dc04bd33f518a20a27ef165811e88a6df4"
+    },
+    "network-design": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/network-design/SKILL.md",
+      "computedHash": "13b5bf38c8d30b2087540cae04f9d81db0b2fbb9fac306e2789be72d77dc6156"
+    },
+    "offboard": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "hr-operations/skills/offboard/SKILL.md",
+      "computedHash": "679c19b8d61981feaff43049812d066f78ebca528396550f0da9ac46f82cba52"
+    },
+    "onboarding": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/onboarding/SKILL.md",
+      "computedHash": "46f65a9fd88b9cf145d03ec2fa629a6522e05160a702d481e0b35ec22b830558"
+    },
+    "org-planning": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/org-planning/SKILL.md",
+      "computedHash": "fa5bb5a1c6cb4646ef49aaa42036283e05a9e720b48932eaf5c938391e8995e7"
+    },
+    "outreach": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/outreach/SKILL.md",
+      "computedHash": "9920aa4ccc7b6a385f9431aaaaf8206ec2bfe642cb95d8af07f74652e59e76d8"
+    },
+    "people-report": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/people-report/SKILL.md",
+      "computedHash": "f8c9c69c60a33f8566e5c8745fd989e9510bda4bcce9b9667238885234f0fbf0"
+    },
+    "performance-analysis": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/performance-analysis/SKILL.md",
+      "computedHash": "8b4f5ba05ea9795fbe7ed70587210693395fd3895805298df50cb100ccec1b10"
+    },
+    "performance-report": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/performance-report/SKILL.md",
+      "computedHash": "b894e01a7771c4facbba7b7421ade76082daaa19aa154e5a34e7c4c2fbf29e95"
+    },
+    "performance-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/performance-review/SKILL.md",
+      "computedHash": "e3bbb57e43aebc3f8f31ee5a13023870ecd40f2c89b49a9f9f07fba68318c24a"
+    },
+    "persona-icp": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/persona-icp/SKILL.md",
+      "computedHash": "076142ba77d438204d3788589086904c29dfad0f7c505ca385dcc748c6cce097"
+    },
+    "pipeline": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/pipeline/SKILL.md",
+      "computedHash": "201438c243a010f05c5a2aafa43263d6c08590d7e0ad77e5f1781824d3997033"
+    },
+    "pipeline-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/sales/skills/pipeline-review/SKILL.md",
+      "computedHash": "a69202345ffa8d431cd97f2c20dc8297c67d6070cda3e2dc0d3d9deac642d407"
+    },
+    "pitch": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/pitch/SKILL.md",
+      "computedHash": "23cc4b98f637e7a398992482a0c7795b26fcd165710c3c0fd0e1f9a8229544dd"
+    },
+    "podcast-pipeline": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "podcast-ops/SKILL.md",
+      "computedHash": "0c3a908c6221c18f74a54fa9bac68b83db85997ab3264eee91bd902ea50f87ce"
+    },
+    "policy-lookup": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/policy-lookup/SKILL.md",
+      "computedHash": "479a1afb18f5eb2a530bd0e48010475fa455ed7afdf1a32e2be410e3cf2f17a9"
+    },
+    "practice-generator": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/education/skills/practice-generator/SKILL.md",
+      "computedHash": "3a0369669d72ae180e9a86f07fc39e86a2c4621d814cbedb1e2a71610d022fa8"
+    },
+    "prd": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "product-strategy/skills/prd/SKILL.md",
+      "computedHash": "7a5550b9545d0d7a408d1d182a592211356dc7d88effe40fef001e658e03032a"
+    },
+    "pre-call-brief": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/pre-call-brief/SKILL.md",
+      "computedHash": "752a103c09938168a923939524692b6b8bf580cb241fce1eb7f19095bd408acc"
+    },
+    "prioritise": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "product-strategy/skills/prioritise/SKILL.md",
+      "computedHash": "6a8ea4b0f3b2fe8a1ec4a84ff6c1ae040e0e160a6d86724283c0b49353b7310d"
+    },
+    "process-doc": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/process-doc/SKILL.md",
+      "computedHash": "88292b859feada40e567462dfa2f1d11977e52849d140835a097d6ac4f5bfe76"
+    },
+    "process-optimization": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/process-optimization/SKILL.md",
+      "computedHash": "e7e7c31539a387cbbb6f74a5d7180bdc3f8e243dec5e6aa476a08b961ddf5917"
+    },
+    "product-brainstorming": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/product-brainstorming/SKILL.md",
+      "computedHash": "37ee877a45c2dba5a5f68d51bed1593d421ece51db81fcf14f7ffb22ce74710e"
+    },
+    "product-listing": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/ecommerce/skills/product-listing/SKILL.md",
+      "computedHash": "ed79a49d09b6cc6dd1b208477a077309c98632ce5990954cab9c6d5aac8b48d8"
+    },
+    "progress-tracker": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/progress-tracker/SKILL.md",
+      "computedHash": "6b77b1e24e5af183beb08712bd2856fe9e3d4c98af20135442dcd5ee8ce53b49"
+    },
+    "project-breakdown": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/project-planning/skills/project-breakdown/SKILL.md",
+      "computedHash": "b6e064464f06f9bb26dc1fdc8d3743a56fdb8b29d3032e8a56f2e2f67142d27c"
+    },
+    "prospect-research": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/prospect-research/SKILL.md",
+      "computedHash": "9721c73d623ac46974131d9d61dc129ed3cf6fd4aca9b1eb95abc5d68880ccde"
+    },
+    "reconciliation": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/reconciliation/SKILL.md",
+      "computedHash": "554678d84090b2435035a2a2a714d7da691f2752abbbddce3f01b8f6d1ed941e"
+    },
+    "recruiting-pipeline": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/human-resources/skills/recruiting-pipeline/SKILL.md",
+      "computedHash": "42e9ce796753be359cb513676d567a0029d793ca5b6a12080d29d947b1f5f9fd"
+    },
+    "reference": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "hr-operations/skills/reference/SKILL.md",
+      "computedHash": "9532cbe71608a5eb1438827a00329b83725f355eb3afd51e3411e74b057db0a0"
+    },
+    "regulatory-monitoring": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "legal-ops/skills/regulatory-monitoring/SKILL.md",
+      "computedHash": "b3fdff14d3cd2501b3045b65e657c6b5791a7626820d1b84dcced9e0b1746302"
+    },
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
       "skillPath": "skills/remotion/SKILL.md",
       "computedHash": "5284f294f0bad7c1217d24af5044a5c672d9202b218331db33e833d64ce121a4"
+    },
+    "research-synthesis": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/research-synthesis/SKILL.md",
+      "computedHash": "853fddecd5ad5704533c19e5abfd6b3a6d023cb9c6bc36965233c0e1627deb76"
+    },
+    "resume-screening": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/recruiting/skills/resume-screening/SKILL.md",
+      "computedHash": "52239060f6cdea344643d9f6ccf04c2e9a5de57d4e497d5e9a1f56cd1784bfdd"
+    },
+    "retro": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "product-strategy/skills/retro/SKILL.md",
+      "computedHash": "34ea339b32bf0d7ee24dca96260a70ce804b8df01f6feecb4c7e70c05570d14d"
+    },
+    "review-contract": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/review-contract/SKILL.md",
+      "computedHash": "dce15bdcf0f17ad29f9b5d4c0caf85952c5603ed05a28de04d548c9a3b2a7d9d"
+    },
+    "risk-assessment": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/risk-assessment/SKILL.md",
+      "computedHash": "8b96b86e6700871c9c88f0576add441f6a74df35445d5a67619a896a6f700d51"
+    },
+    "risk-register": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/project-planning/skills/risk-register/SKILL.md",
+      "computedHash": "64b28ffe70ca9c32f8e3f8b434ce1500f1f11a4b653cc3094ae2a746e6f0b82c"
+    },
+    "roadmap-update": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/roadmap-update/SKILL.md",
+      "computedHash": "6882a279cfdaa76d6b5fe534bd30e06b2211b34b50cdee12ba65951606248dc1"
+    },
+    "runbook": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/runbook/SKILL.md",
+      "computedHash": "924caa782a64daf0c9342982cfcff58df5828a4e5c533ce78471dd680e2743d2"
+    },
+    "salam": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/salam/SKILL.md",
+      "computedHash": "1f61342e22844b5b027428e46a8d10f684ae40e68dcb6f240682ca3a68479592"
+    },
+    "sales-marketing-global-router": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/sales-marketing-global-router/SKILL.md",
+      "computedHash": "f01bab42b76fda2572e38d471c4364db2112f3a9b6ef98ca8a37a08807f35aa8"
+    },
+    "sanctions-screening": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/sanctions-screening/SKILL.md",
+      "computedHash": "ca2ed882b276144fd98a019ed54ce490a00acea0841d8e28be68fcce4ee09e0a"
+    },
+    "seo-audit": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/marketing/skills/seo-audit/SKILL.md",
+      "computedHash": "1b8eeba1a359fb69a7fa1f31d54bbdec7ae349c146a0469387835eed7faf4db7"
+    },
+    "seo-content": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/seo/skills/seo-content/SKILL.md",
+      "computedHash": "c6787714da27c4ba5465dfbb60cf1607fd7688573e9149ad5127d4a513cd03c9"
+    },
+    "sequence": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "sales-revops-marketing/skills/sequence/SKILL.md",
+      "computedHash": "765b0371134bc2df4e6fe5fb37a3039cdf725a10c9219db5d21e18b22efc2690"
+    },
+    "setup": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/setup/SKILL.md",
+      "computedHash": "07da053eb09c24f709a322283219a9c25caaac6204e229f906d5f6106bf20f09"
+    },
+    "shariah-screening-global": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/shariah-screening-global/SKILL.md",
+      "computedHash": "e157430de41a34ea42a98b211df7ac3fa66063715a99b948ea802c5079d556aa"
+    },
+    "signature-request": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/signature-request/SKILL.md",
+      "computedHash": "1277018280224e6d752705b4d4f227b9544e0449a0cdc23a7faaaef20a6631d2"
+    },
+    "skill-creator": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/skill-creator/SKILL.md",
+      "computedHash": "1ea39619768d93eed411a84f55ab8ffa9e15f0d064aeb8b34cb3a78382f04ded"
+    },
+    "social-post": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/social-media/skills/social-post/SKILL.md",
+      "computedHash": "f0efe4552f4a47ffe5adb79c8898b8bc36f7ccb28284909aebbec9c554ac837c"
+    },
+    "source-verification": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/research/skills/source-verification/SKILL.md",
+      "computedHash": "68337fd77631f98f9f2f02e9a7a49fbbb4abdfff2d7f1b81c2e33f809da74d77"
+    },
+    "sox-testing": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/sox-testing/SKILL.md",
+      "computedHash": "a418380636a3906f8f1e0bf7b82ccecf7d71ed42dd2ba4575637cd6d8ec844fd"
+    },
+    "spend-analysis": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/spend-analysis/SKILL.md",
+      "computedHash": "3ddcf9280e383f1f4c25c2d1c459b3af8cb59eccc8fd82ee6f4dca5cad0cbc2d"
+    },
+    "sprint": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/sprint/SKILL.md",
+      "computedHash": "ff5205e290ff2799a2c0c7c09692c3296e85e96ce78c9ed6da275682ceca47b3"
+    },
+    "sprint-planning": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/sprint-planning/SKILL.md",
+      "computedHash": "b37568e5b5a3462020da78c343b2ca57cd49e7841a2206e6cca5b1631e3c5f3a"
+    },
+    "sql-queries": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/sql-queries/SKILL.md",
+      "computedHash": "d0c75aada6c7920f568cbe313a0228802d171635a5f39be328d29f49c6393097"
+    },
+    "stakeholder-update": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/stakeholder-update/SKILL.md",
+      "computedHash": "a0771e9dacc43075558c1736331bb736e8a6a46a41135fe773c0135c58461d3b"
+    },
+    "standup": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/standup/SKILL.md",
+      "computedHash": "ab78a54189ab30dafa0c408905acec0953ecae883f18fe1f66a4f010df376d05"
+    },
+    "statistical-analysis": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/statistical-analysis/SKILL.md",
+      "computedHash": "6dba9b6a31e7ffc7205120700151a3522df91c19a6dba3d13bb9b4835e768feb"
+    },
+    "status-report": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/status-report/SKILL.md",
+      "computedHash": "a3640eaae521c17126fb9be04e2a15372e11008410ad09cf9a060d0fc5b37c90"
+    },
+    "stories": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "product-strategy/skills/stories/SKILL.md",
+      "computedHash": "d46f190f7c8a769a51585eda4bcb1e845df75ab692047e57ba9b78de801ba63c"
+    },
+    "stress-testing": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "banking/skills/stress-testing/SKILL.md",
+      "computedHash": "ae241c052aa03688bd2ea52954f74e8509d484405900612cdd1e000940c76b22"
+    },
+    "sukuk-investor": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/sukuk-investor/SKILL.md",
+      "computedHash": "67959d0e967ffd6d990cdf061e72a64b34f22b6828e639975b159ad8ab50568b"
+    },
+    "sukuk-issuer": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/sukuk-issuer/SKILL.md",
+      "computedHash": "1731039bebd8d451b33b16b2333b07791956d43aed68e6dca5b990860935f108"
+    },
+    "supplier-risk": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/supplier-risk/SKILL.md",
+      "computedHash": "b400f8c881bad465a22a34a6ac671f09c7bcb8318b3eb6cb89ae5fce5a3f4cfd"
+    },
+    "supply-chain-brief": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/supply-chain-brief/SKILL.md",
+      "computedHash": "3be3dece255189b89ec81ef4e8a982aa6384c1ec06c683638b277fb5f7f045d1"
+    },
+    "synthesize-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/synthesize-research/SKILL.md",
+      "computedHash": "651f1fc3d12f27cd4908f4a2d3f1d344a16af063f7fba3a66183242070254c39"
+    },
+    "system-design": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/system-design/SKILL.md",
+      "computedHash": "5915b5f79ae74f20473c4922075b091f290374d26b26c927af9c767102424ac4"
+    },
+    "takaful-ifrs17": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/takaful-ifrs17/SKILL.md",
+      "computedHash": "268d685ce0b18a4377397b2aacc0668cd40d516f293a01812dd005f030d000ee"
+    },
+    "task-intelligence": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/task-intelligence/SKILL.md",
+      "computedHash": "e264c04917979fda72197028836fc30ee094e37584c098f8e4ebbb6cbc3c3845"
+    },
+    "tech-debt": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/tech-debt/SKILL.md",
+      "computedHash": "3f0795a17cd18ea117f41bcfb8fef66fa17b1a00a2c1a0a7f134e090f0dcdb92"
+    },
+    "test-plan": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/qa/skills/test-plan/SKILL.md",
+      "computedHash": "8e300a724b07d3c164517f0d05543bb7a498eb70187d26543ec8104d5002d1d6"
+    },
+    "testing-strategy": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/engineering/skills/testing-strategy/SKILL.md",
+      "computedHash": "2fe64e97a596e862cd946bb8cddbbf4e9f1e1f21ca817f586111a25af474d0f8"
+    },
+    "threat-briefing": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/security/skills/threat-briefing/SKILL.md",
+      "computedHash": "b60f9a3217467418c8b084b39296415a58fa0365433783b865dd24fdab58facb"
+    },
+    "ticket-triage": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/customer-support/skills/ticket-triage/SKILL.md",
+      "computedHash": "55974d5a7aeed4603fb9844065b71d1116c225e1edd126f330b07b9983dd23c4"
+    },
+    "triage-nda": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/triage-nda/SKILL.md",
+      "computedHash": "58dd70abf6f3a1910295b77c20876325feed05cbc8aa3aee2486954dc4ab0f9b"
+    },
+    "user-research": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/user-research/SKILL.md",
+      "computedHash": "e05ff6268438b1a771ca728584fd7efa98f9a35d4fe7a9b66e7b3e2d3f761d9e"
+    },
+    "ux-copy": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/design/skills/ux-copy/SKILL.md",
+      "computedHash": "32310025a45deab0401d2492089283a164cc557b15a4e3fe0f4dcbe74303f9fb"
+    },
+    "validate": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "innovation/skills/validate/SKILL.md",
+      "computedHash": "9d7af8ec1c6849a854e1c89fa09733b796505f05fd98c6a73c6194114ed430cf"
+    },
+    "validate-data": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/validate-data/SKILL.md",
+      "computedHash": "be93357d5ef56c699c4f598d905eabc805d7898da208724e53393a42f86b11bf"
+    },
+    "variance-analysis": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/finance/skills/variance-analysis/SKILL.md",
+      "computedHash": "f6036af48ef7db4f9d4de489afcd281bf51cdff5829ebe3fec068f39ddf76c77"
+    },
+    "vendor-assessment": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/vendor-assessment/SKILL.md",
+      "computedHash": "16518ea007dc0bbb876d66d592c43991da25f9241821e4ff81d7b4fbf538b6c3"
+    },
+    "vendor-check": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/legal/skills/vendor-check/SKILL.md",
+      "computedHash": "7f2209c872cebaa3827e8ed79261737d0da0bf34084367f57dc85708d686881d"
+    },
+    "vendor-communication": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "supply-chain/skills/vendor-communication/SKILL.md",
+      "computedHash": "ad62ad962c8260c93bbde0b05e06c98ea83c3f312610c76e81fa26aaf636d1a1"
+    },
+    "vendor-review": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/operations/skills/vendor-review/SKILL.md",
+      "computedHash": "010264fca085e774d3b7381fc77aa03ff1ff8cf2e34bd3ae07c0a9b8cb641f35"
+    },
+    "vulnerability-assessment": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/security/skills/vulnerability-assessment/SKILL.md",
+      "computedHash": "ddd06780daf06450e53de6c7577541ea294fdabc4a029b8d94199cafe7c96713"
+    },
+    "workplace-context": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/workplace-context/SKILL.md",
+      "computedHash": "19ce0e2124ec8630dc928edcce1d380b6f307fb34493450e088faf81fb0690ce"
+    },
+    "workplace-search": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "agentic-office/skills/workplace-search/SKILL.md",
+      "computedHash": "ba5529b7229c45cbf2652462728249e0474b145260131867d8fe999c90f6f919"
+    },
+    "write-query": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/data/skills/write-query/SKILL.md",
+      "computedHash": "9af9dab965a61525dd5b4d030c4464cf16341ee2a5b55d6ee2bcbe44bf46f728"
+    },
+    "write-spec": {
+      "source": "clawpod-app/awesome-openclaw-agent-packs",
+      "sourceType": "github",
+      "skillPath": "packs/product-management/skills/write-spec/SKILL.md",
+      "computedHash": "afaf9a2e24e3fe1f8a314c009602242aeb68f1f0674bdfbb1dc86eb2774feb4e"
+    },
+    "x-longform-post": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "x-longform-post/SKILL.md",
+      "computedHash": "404c0c6c8eda5f53edb1f283d9a9fa4e3cea6134cf369486b6cd7651171c9fda"
+    },
+    "yt-competitive-analysis": {
+      "source": "ericosiu/ai-marketing-skills",
+      "sourceType": "github",
+      "skillPath": "yt-competitive-analysis/SKILL.md",
+      "computedHash": "7b4d2c40e267011b500f7042ca0c876c65633324022372e060a2eb35a811daf3"
+    },
+    "zakat-global": {
+      "source": "panaversity/agentfactory-business-plugins",
+      "sourceType": "github",
+      "skillPath": "islamic-finance/skills/zakat-global/SKILL.md",
+      "computedHash": "7d5e4f2cea6dbdd9a9e4e5ec19d4314c798b47ced188df98c945015eb06e0338"
     }
   }
 }
