@@ -776,6 +776,26 @@ When you add new agents or edit existing ones, regenerate all integration files:
 
 ---
 
+## 🎬 OpenMontage (Video Production)
+
+[OpenMontage](https://github.com/calesthio/OpenMontage) is an open-source, agentic video production system bundled here as a git submodule in [`openmontage/`](openmontage/). It gives your agents (Video Content Creator, Content Creator, Studio Producer, and friends) a real production toolkit: 12 production pipelines, 50+ tools for video/image/TTS/music generation, and 400+ orchestration skills.
+
+```bash
+# Pull the submodule (on a fresh clone, or after this repo updates)
+git submodule update --init openmontage
+
+# Set it up
+cd openmontage
+make setup          # or manually:
+                    # python3 -m venv .venv && source .venv/bin/activate
+                    # python -m pip install -r requirements.txt
+                    # cd remotion-composer && npm install && cd ..
+```
+
+Then open `openmontage/` in your AI coding assistant (Claude Code, Cursor, Copilot, Windsurf) and describe the video you want in natural language — the agent reads OpenMontage's pipeline manifests and skill files and orchestrates the production. See [openmontage/README.md](openmontage/README.md) for providers, API keys, and configuration.
+
+---
+
 ## 🗺️ Roadmap
 
 - [ ] Interactive agent selector web tool
