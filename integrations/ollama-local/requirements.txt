@@ -1,0 +1,18 @@
+# Ollama Local Integration Requirements
+
+# Core dependencies
+openai>=1.0.0          # OpenAI SDK (Ollama compatible)
+anthropic>=0.7.0       # Claude API (for hybrid client)
+pydantic>=2.0.0        # Data validation
+
+# Development & utilities
+python-dotenv>=1.0.0   # Environment variable management
+requests>=2.31.0       # HTTP client
+pyyaml>=6.0           # YAML configuration parsing
+
+# Optional: Performance and monitoring
+psutil>=5.9.0         # System monitoring
+colorama>=0.4.6       # Colored terminal output
+
+# Optional: Advanced features
+asyncio-contextmanager>=1.0.0  # Async context support
